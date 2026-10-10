@@ -1,0 +1,2019 @@
+{
+  "schema_version": 1,
+  "purpose": "Current mathematical-source map preserving exact manuscript statements and recording expanded proved targets, conditional infrastructure, contextual remarks and remaining clauses. Proposition-valued specifications are not counted as proof anchors. Mechanical verification is scoped to an identified source revision separately.",
+  "paper": {
+    "title": "Replica symmetry breaking at arbitrary depth",
+    "authors": [
+      "P. M. Aronow",
+      "Patrick Lopatto"
+    ],
+    "source_revision": "Revision (16), with two prose clarifications",
+    "manuscript_sha256": "1216a3820a4d632228f0a1218a53c1feda73d04a6bb11ab3eab8cfa1db9c2b9f",
+    "bibliography_sha256": "8dae1c93931df924c58b72a9ea82c025f2ae18b21b6d713e5afa57263aeaba92",
+    "supplied_revision16_manuscript_sha256": "3302e39b8554fa851811c402d8aee3ccf32c8f37c727066f5c2fb79cd233bea6",
+    "correction_scope": "Lines 75 and 1788 only: explicit zero-field spin-flip/nonnegative hierarchy convention, and inclusive [0,a_*] support cutoff. Mathematical statements, numbering, labels, line positions, and bibliography unchanged."
+  },
+  "previous_source_manuscript_sha256": "9d572803e6e3125dea11d8eb890d65d8eb5ce5eddd16e43430480b40dc5d1bba",
+  "global_scope_restrictions": [
+    "The revised universal covariance class allows every positive finite even degree set beginning at two, with \u03be\u2033(0)<1 explicit. Historical DepthPaper covariances begin at four and retain an internal Hessian invariant; revised seed wrappers derive that invariant from paper weak nondegeneracy.",
+    "Lemma 2.2 is atomic in the paper, meaning finitely supported. Its full literal physical-time Brownian Hessian integral is proved for that domain, including endpoint atoms and zero origin volatility. Its analytic/martingale clauses and physical state-noise identity hold more generally. No arbitrary-measure extension of the Hessian stochastic integral is asserted.",
+    "Atomic coordinate arrays carry Lean product/sup norms. Closed coordinate balls and Hessian coercivity use those concrete norms. The paper leaves its finite-dimensional ball norm unspecified; Euclidean reformulation requires norm-equivalence constants.",
+    "LimitingStandingData-parameterized envelope and perturbation results are conditional infrastructure. Expanded Section 4 and universal seed wrappers construct their witnesses from paper weak nondegeneracy and subcriticality.",
+    "Arbitrary-measure time PDE assertions are weak/distributional; finite atomic time endpoints are treated by within-cell or one-sided derivatives. All positive-order spatial derivatives are jointly continuous and bounded on the closed time strip.",
+    "All four numbered remarks are explanatory context, not standalone Challenge targets. Remark A.8 has supporting all-positive mixed bounds, but its complete all-positive Banach smoothness wording is not separately certified by the current (0,2) API."
+  ],
+  "counts": {
+    "theorem": 3,
+    "proposition": 9,
+    "lemma": 23,
+    "definition": 2,
+    "corollary": 4,
+    "remark": 4
+  },
+  "claims": [
+    {
+      "number": "1.1",
+      "kind": "theorem",
+      "label": "thm:main",
+      "source_lines": {
+        "start": 219,
+        "end": 231
+      },
+      "statement_tex": "\\begin{theorem}\\label{thm:main}\nFor every integer $k\\geq1$, there exist even integers\n\\[\n 4=p_0<p_1<\\cdots<p_k\n\\]\nand a nonempty open set $\\mathcal O_k\\subset(0,\\infty)^{k+1}$ such that, for\nevery $\\mathbf c=(c_0,\\ldots,c_k)\\in\\mathcal O_k$, the mixed $p$-spin\nIsing model at zero external field with covariance function\n\\[\n \\Xi_{\\mathbf c}(q)=\\sum_{j=0}^k c_jq^{p_j}\n\\]\nhas a $k$-RSB Parisi measure.\n\\end{theorem}",
+      "coverage_status": "selected_target_compiled",
+      "scope_note": "Selected Challenge/Solution target: every k\u22650 has a nonempty open coefficient phase with a fixed increasing even degree list beginning at four, exactly k+1 positive-mass support points and global minimization against every finite scheme of every depth. The full-measure equivalence proves minimization over all actual probability measures. This strengthens the paper range k\u22651.",
+      "related_lean_declarations": [
+        "ArbitraryRSB.arbitrary_finite_depth_open_set",
+        "ArbitraryRSB.full_measure_minimizer_iff_finite_schemes"
+      ],
+      "previous_source_id": "depth:theorem:1.1",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_anchors": [
+        "ArbitraryRSB.arbitrary_finite_depth_open_set",
+        "ArbitraryRSB.full_measure_minimizer_iff_finite_schemes"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Solution.lean",
+          "sha256": "41be33b63d5e00d6549c3eb74770f4957e015e914788edeeb663e0be0dc96980"
+        },
+        {
+          "path": "Challenge.lean",
+          "sha256": "c099d483a329259e4694c03675824a59217309e52a905309c444f79893790624"
+        },
+        {
+          "path": "DepthPaper/MainTheorems.lean",
+          "sha256": "b2de8756bca6f8c6f2e0ee74b5d993ebc81fbaf64d62000e3f9a4ea6e9844505"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "1.2",
+      "kind": "theorem",
+      "label": "thm:gardner-main",
+      "source_lines": {
+        "start": 244,
+        "end": 273
+      },
+      "statement_tex": "\\begin{theorem}\n\\label{thm:gardner-main}\nLet $r\\geq0$, and let $\\Xi$ be an admissible covariance whose Parisi\nmeasure is $r$-RSB and nondegenerate.  Define\n\\[\n \\mathfrak p(b)=\\inf_{\\mu\\in\\M}\\Pp_{b^2\\Xi}(\\mu),\n \\qquad\n s_\\Xi=\\mathfrak p(1)-\\mathfrak p'(1).\n\\]\nThen $s_\\Xi>0$, and there exists $\\eta \\in(0,2s_\\Xi)$ such that, for every\nsufficiently large even integer $p$, there exists a unique critical\ncoefficient\n\\[\n \\lambda_{\\mathrm c,p}\\in(2s_\\Xi-\\eta,2s_\\Xi+\\eta)\n\\]\nfor the family\n\\[\n \\Xi_{p,\\lambda}(q)=\\Xi(q)+\\lambda q^p,\n \\qquad\n \\lambda\\in[2s_\\Xi-\\eta,2s_\\Xi+\\eta],\n\\]\nwith the following phase diagram:\n\\[\n \\begin{cases}\n r\\text{-RSB}, & \\lambda\\leq\\lambda_{\\mathrm c,p},\\\\\n (r+1)\\text{-RSB}, & \\lambda>\\lambda_{\\mathrm c,p}.\n \\end{cases}\n\\]\nMoreover, $\\lambda_{\\mathrm c,p}\\rightarrow2s_\\Xi$ as $p\\to\\infty$ through even integers.\n\\end{theorem}",
+      "coverage_status": "selected_target_compiled",
+      "scope_note": "Selected Challenge/Solution target and expanded revised target: every admissible finite positive even covariance, including quadratic terms with \u03be\u2033(0)<1, and the paper nondegenerate atomic seed without a Hessian input. Literal pressure entropy is positive; one critical coefficient is uniquely characterized on the closed positive window; its even-degree limit is twice entropy; both exact depth equivalences hold.",
+      "related_lean_declarations": [
+        "ArbitraryRSB.universal_gardner_transition",
+        "Verification.RevisedTargets.theorem1_2_exact",
+        "Verification.RevisedTargets.finiteMixtureTransition_exact"
+      ],
+      "previous_source_id": "depth:theorem:1.2",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "checked_modules": [
+        {
+          "file": "GeneralDepthPaper/RevisedTransition.lean",
+          "sha256": "f0394dbb3fd1aa9f636d7c6616553c85ea62587cc7667d183c2ae1971b7b64c2"
+        }
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "proof_anchors": [
+        "ArbitraryRSB.universal_gardner_transition",
+        "Verification.RevisedTargets.theorem1_2_exact",
+        "Verification.RevisedTargets.finiteMixtureTransition_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Solution.lean",
+          "sha256": "41be33b63d5e00d6549c3eb74770f4957e015e914788edeeb663e0be0dc96980"
+        },
+        {
+          "path": "Challenge.lean",
+          "sha256": "c099d483a329259e4694c03675824a59217309e52a905309c444f79893790624"
+        },
+        {
+          "path": "Verification/RevisedTargets.lean",
+          "sha256": "3087169820341c4a1960ce4e50a3f2ed746469f3e6027d4539ec2d3a38819499"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedTransition.lean",
+          "sha256": "f0394dbb3fd1aa9f636d7c6616553c85ea62587cc7667d183c2ae1971b7b64c2"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "2.1",
+      "kind": "proposition",
+      "label": "prop:first-variation-criterion",
+      "source_lines": {
+        "start": 576,
+        "end": 606
+      },
+      "statement_tex": "\\begin{proposition}\\label{prop:first-variation-criterion}\nLet $\\Xi$ be admissible, let $\\mu,\\nu\\in\\M$ be atomic, and write\n$f=f_{\\Xi,\\mu}$.  Then\n\\begin{equation}\\label{eq:directional-derivative}\n \\left.\\frac{\\dd}{\\dd t}\\Pp_\\Xi((1-t)\\mu+t\\nu)\\right|_{t=0^+}\n =-\\int_0^1 f(q)\\dd(\\nu-\\mu)(q).\n\\end{equation}\nIn particular, for $Q\\in[0,1]$, moving mass $1-m$ from $\\mu$ to $Q$\ngives, from the left at $m=1$,\n\\begin{equation}\\label{eq:new-point-derivative}\n \\left.\\frac{\\dd}{\\dd m}\\Pp_\\Xi\\bigl(m\\mu+(1-m)\\delta_Q\\bigr)\n \\right|_{m=1^-}\n =f(Q)-\\int_0^1f\\dd\\mu.\n\\end{equation}\nIf $\\mu=\\sum_{i=0}^rw_i\\delta_{q_i}$ with $w_i>0$ and $q_0<\\cdots<q_r$, then\nmoving the location $q_i\\in(0,1)$ with all masses and other locations\nfixed, or moving mass from $q_j$ to $q_i$, gives, respectively,\n\\begin{equation}\\label{eq:location-derivative}\n \\partial_{q_i}\\Pp_\\Xi(\\mu)=-w_i f'(q_i),\n \\qquad\n \\left.\\frac{\\dd}{\\dd s}\\Pp_\\Xi\\bigl(\\mu+s(\\delta_{q_i}-\\delta_{q_j})\\bigr)\n \\right|_{s=0}=f(q_j)-f(q_i),\n\\end{equation}\nwhere the $s$-derivative is two-sided.  Finally, if\n\\begin{equation}\\label{eq:first-variation-criterion}\n f(q)\\leq0\\quad(0\\leq q\\leq1),\n \\qquad\n \\mu\\bigl(\\{q:f(q)=0\\}\\bigr)=1,\n\\end{equation}\nthen $\\mu$ is the unique Parisi measure.\n\\end{proposition}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Derivative clauses hold for all actual probability measures, strengthening source atomic scope. The first mix derivative is right-sided at zero; new point mass is left-sided at one; positive atom mass transfer is two-sided. The atom move derivative uses the actual atom weight and actual first-variation derivative. Global minimization is over all probability measures, and equality to the unique actual minimizer is proved.",
+      "related_lean_declarations": [
+        "Verification.SectionTwoTargets.proposition2_1_exact"
+      ],
+      "previous_source_id": "depth:proposition:2.1",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionTwoTargets.proposition2_1_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionTwoTargets.lean",
+          "sha256": "20482b0d631dec887c7acb65addcdbfc65cd09d2007d6ee2d05a6f8bc84e1df8"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoVariation.lean",
+          "sha256": "7db1f5af24f40a5495151a4985b8c2115c7b56f4774f7e55c4de80d33aae8443"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "2.2",
+      "kind": "lemma",
+      "label": "lem:curvature",
+      "source_lines": {
+        "start": 621,
+        "end": 644
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:curvature}\nLet $\\Xi$ be admissible and $\\mu$ atomic, let $X$ be the optimal diffusion\nof $\\mu$, and set $U_q=u_{\\mu,x}(q,X_q)$.  For all\n$(q,x)\\in[0,1]\\times\\R$,\n\\begin{equation}\\label{eq:curvature}\n |u_{\\mu,x}|\\leq1,\n \\qquad\n 0<u_{\\mu,xx}\\leq1-u_{\\mu,x}^2.\n\\end{equation}\nThe process $U$ is a martingale with $U_0=0$, $U_1=\\tanh X_1$, and\n$\\dd U_q=\\sqrt{\\Xi''(q)}u_{\\mu,xx}(q,X_q)\\dd B_q$.  Moreover,\n$\\Gamma=\\Gamma_{\\Xi,\\mu}$ belongs to $C^1([0,1])$ and satisfies $\\Gamma(0)=0$,\n\\begin{equation}\\label{eq:Gamma-derivative}\n \\Gamma'(q)\n =\\Xi''(q)\\E u_{\\mu,xx}(q,X_q)^2=\\Xi''(q)\\Gamma_2(q),\n\\end{equation}\nand\n\\begin{equation}\\label{eq:Gamma-curvature}\n 0\\leq\\Gamma'(q)\\leq\\Xi''(q)\\bigl(1-\\Gamma(q)\\bigr),\n \\qquad\n \\Gamma(q)\\leq\\Xi'(q),\n \\qquad 0\\leq q\\leq1.\n\\end{equation}\n\\end{lemma}",
+      "coverage_status": "proved_complete_literal_physical_stochastic_target",
+      "scope_note": "The paper defines atomic measures as finitely supported. The complete printed target is proved for every finitely supported overlap probability measure, including atoms at zero and one, and every finite positive even covariance of degree at least two. No subcriticality or positive origin volatility is needed for this lemma. The physical-time standard Brownian motion is constructed on the original sample space; its past adaptation modulo null sets and independent future increments are proved in the original clock past. The same driver gives the actual state noise. Actual sqrt(\u039e\u2033)-times-Hessian left sums converge through cell-mesh and endpoint limits; their independently defined stochastic integral equals the actual continuous gradient modification. The analytic/martingale clauses and state-noise identity hold for all probability measures. The Hessian stochastic-integral theorem retains the printed finite-support hypothesis. The alternative proof uses normalized-cell It\u00f4, Wiener-kernel Brownian reconstruction and L\u00b2 sum comparison. No stochastic representation premise, new physical-driver uniqueness theorem or equality of raw natural filtrations is asserted.",
+      "related_lean_declarations": [
+        "Verification.PhysicalStochasticTargets.lemma2_2_finite_atomic_physical_exact",
+        "Verification.SectionTwoTargets.lemma2_2_analytic_martingale_exact",
+        "Verification.StochasticTargets.lemma2_2_finite_atomic_clock_stochastic",
+        "Verification.StochasticTargets.lemma2_2_clock_summands"
+      ],
+      "previous_source_id": "depth:lemma:2.2",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.PhysicalStochasticTargets.lemma2_2_finite_atomic_physical_exact",
+        "Verification.SectionTwoTargets.lemma2_2_analytic_martingale_exact",
+        "Verification.StochasticTargets.lemma2_2_finite_atomic_clock_stochastic",
+        "Verification.StochasticTargets.lemma2_2_clock_summands"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "FourPapersCommon/WienerBrownianDriver.lean",
+          "sha256": "bca5a4f6cc3a3aca0fcf14fb4720d524ef2f31a9a819689903c5c02c489475fe"
+        },
+        {
+          "path": "FourPapersCommon/WienerKernelTransport.lean",
+          "sha256": "87edeb2d8a9ea6702c778a7da2c0f9779d0666c4cb27bd97c29abddae9cccf40"
+        },
+        {
+          "path": "FourPapersCommon/WienerPastIndependence.lean",
+          "sha256": "d8618636ef078861084e7d39e475182b67e096ce557b1af93ff478f50c5434cd"
+        },
+        {
+          "path": "FourPapersCommon/WienerPastMeasurability.lean",
+          "sha256": "03ac0c00cadf614f0f9880cf3eb89275a84e130aaffb6d0eb0dc74b998b417ea"
+        },
+        {
+          "path": "FourPapersCommon/BoundedWienerMultiplier.lean",
+          "sha256": "38c5b9002d8816052e14b87039c4a109cf55006f6af9bfa53b482894d3804f8f"
+        },
+        {
+          "path": "GeneralDepthPaper/PhysicalVolatility.lean",
+          "sha256": "faf0e8ad7c5f2ad2000d3ea3b5e2a15cd69aa2db6594a45fccec6119afff7eb1"
+        },
+        {
+          "path": "GeneralDepthPaper/PhysicalHessianPartitionBound.lean",
+          "sha256": "034f43f12675516f5737aea90febee189ee9e9d778601a7cde23418544809ec4"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPhysicalClockInverse.lean",
+          "sha256": "83b3f8ef5d0b67351a70afa2ffc5442604a8764492edc9cadbf6f19b2ee0d31e"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPhysicalClockTransport.lean",
+          "sha256": "fcbd24ace5a1c531d7cea002c153461ff759bac9e976b9fe9ea19b42c63549ad"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPhysicalClockError.lean",
+          "sha256": "4d74103d9e98a0879c1ccad3c896206cb57a5b2a9246e65f4ff3b795ccb60dc3"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPhysicalBrownian.lean",
+          "sha256": "7c2a11c1a29765ef1459fc84f04ff3462aafc8abd9a9bcdfd2079c15675c15f8"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPhysicalState.lean",
+          "sha256": "7c63722aa8d9e8df9154cfae9005be239bf32a3e8af60b5a5c22d1654994a1c9"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPhysicalHessianAdapted.lean",
+          "sha256": "882f51d91ed6e5d00b8e71d7a6bc1da78af529de58ce123f29f6689f5842bb52"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPhysicalBrownianSums.lean",
+          "sha256": "fb51e7b5bf85dfa7991d8f528f8a505ab14e6b019ebce1480b533193d90b7f63"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPhysicalBrownianIntegral.lean",
+          "sha256": "6a1ec2f813053ae0112c0a305cd328c632868651594bbd7f7ddf2521d9cbbf8b"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPhysicalBrownianCell.lean",
+          "sha256": "c60254454a61003199b31fb1bf11f999437d68a57ea6a69bcab401e5fdddbbd6"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPhysicalBrownianGluing.lean",
+          "sha256": "819a505759f434bb998cfd58cde23f6d6bab72cccf72e712b91ecb462db3fb90"
+        },
+        {
+          "path": "Verification/PhysicalStochasticTargets.lean",
+          "sha256": "482f88b1a342f4b8cb3eff264bd2a0b6d89b92c1572b78882b8e379f3c5aae4b"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoStochasticClock.lean",
+          "sha256": "a7ffc356324b64a77d1bfcab1123241a2854d48550ecba0d8cea796598f0805f"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoStochasticPaths.lean",
+          "sha256": "7d7a42d7dac6e2278bf456e210cbd42d2a60e8d6abaa5f8820778059f8c023cd"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoStochasticGluing.lean",
+          "sha256": "7b6e457e429ba3e6b708d0fbf6504dff4874824e70aa9387837b75fc3b4eb7d5"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoStochasticCell.lean",
+          "sha256": "0a47c557c458c12c5cb0eddf46a809cc349693eac914ef0f7492622622b62502"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoStochasticLimits.lean",
+          "sha256": "0280f12154f39a068cb7d72a29ca1c7fb874c42aafbaad9d70af1f09e121355e"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoCurvature.lean",
+          "sha256": "6c7e1bfa0a233fa52db6a7ab98b1a2d264a3f3512cb576267c42b1927c6ce8dd"
+        },
+        {
+          "path": "FRSB/FiniteSchemeRepresentation.lean",
+          "sha256": "9e6fabfcad32f97f71edf44ba5d8fb409d5213b55436d58eb5239d4a73dcc6a2"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "2.3",
+      "kind": "definition",
+      "label": "def:nondegenerate",
+      "source_lines": {
+        "start": 699,
+        "end": 708
+      },
+      "statement_tex": "\\begin{definition}\\label{def:nondegenerate}\nSuppose that $\\nu_z$ in \\eqref{eq:atomic-measure} is the Parisi measure of\n$\\Xi$.  We call the $r$-RSB Parisi measure $\\nu_z$ \\emph{nondegenerate} if:\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n \\item $f_{\\Xi,\\nu_z}\\leq0$ on $[0,1]$, with equality exactly at\n $q_0,\\ldots,q_r$;\n \\item $f_{\\Xi,\\nu_z}''(q_i)<0$ for $1\\leq i\\leq r$.\n\\end{enumerate}\nFor $r=0$, condition~(ii) is vacuous.\n\\end{definition}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Expanded equivalence matches paper nondegeneracy: actual global minimization, nonpositive first variation with exactly the support contacts, strictly negative curvature at every positive support atom. No Hessian premise is hidden in PaperNondegenerate. Subcriticality belongs separately to covariance admissibility.",
+      "related_lean_declarations": [
+        "Verification.SectionTwoTargets.definition2_3_exact"
+      ],
+      "previous_source_id": "depth:definition:2.5",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "checked_modules": [
+        {
+          "file": "DepthPaper/RevisedNondegeneracy.lean",
+          "sha256": "b8ad341c0421590ff973debc88fba3a19aa9581aecaaae8c35402462d4889760"
+        }
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "transitive_axioms": [],
+      "proof_anchors": [
+        "Verification.SectionTwoTargets.definition2_3_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionTwoTargets.lean",
+          "sha256": "20482b0d631dec887c7acb65addcdbfc65cd09d2007d6ee2d05a6f8bc84e1df8"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoVariation.lean",
+          "sha256": "7db1f5af24f40a5495151a4985b8c2115c7b56f4774f7e55c4de80d33aae8443"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "2.4",
+      "kind": "corollary",
+      "label": "cor:atomic-gradient",
+      "source_lines": {
+        "start": 740,
+        "end": 751
+      },
+      "statement_tex": "\\begin{corollary}\\label{cor:atomic-gradient}\nLet $\\Xi$ be admissible, $z\\in\\mathcal Z_r$, $0<m\\leq1$, and $q_r<Q<1$,\nand let $f$ be the first-variation function of\n$\\mu=m\\nu_z+(1-m)\\delta_Q$.  Then, with $m$ and $Q$ fixed,\n\\[\n \\partial_{q_i}\\Pp_\\Xi(\\mu)=-mw_if'(q_i)\\quad(1\\leq i\\leq r),\n \\qquad\n \\partial_{w_i}\\Pp_\\Xi(\\mu)=m\\bigl(f(q_r)-f(q_i)\\bigr)\\quad(0\\leq i<r).\n\\]\nIn particular, the $z$-gradient of $\\Pp_\\Xi(\\mu)$ vanishes if and only if\n$f=0$ on $\\supp\\nu_z$ and $f'=0$ on $\\supp\\nu_z\\setminus\\{0\\}$.\n\\end{corollary}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Both actual Fr\u00e9chet coordinate partials include m exactly; source open Q interval, lower mass 0<m\u22641, chart depth including zero, and the stationarity equivalence are preserved.",
+      "related_lean_declarations": [
+        "Verification.SectionTwoTargets.corollary2_4_exact"
+      ],
+      "previous_source_id": "depth:corollary:2.3",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionTwoTargets.corollary2_4_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionTwoTargets.lean",
+          "sha256": "20482b0d631dec887c7acb65addcdbfc65cd09d2007d6ee2d05a6f8bc84e1df8"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoVariation.lean",
+          "sha256": "7db1f5af24f40a5495151a4985b8c2115c7b56f4774f7e55c4de80d33aae8443"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "2.5",
+      "kind": "proposition",
+      "label": "prop:finite-step-regularity",
+      "source_lines": {
+        "start": 772,
+        "end": 777
+      },
+      "statement_tex": "\\begin{proposition}\n\\label{prop:finite-step-regularity}\nFor every finite $\\mathscr P\\subset\\{2,4,6,\\ldots\\}$ and every $r\\geq0$,\nthe map $(\\mathbf c,z)\\mapsto\\Pp_{\\Xi_{\\mathbf c}}(\\nu_z)$ is $C^\\infty$ on\n$\\mathcal C_{\\mathscr P}\\times\\mathcal Z_r$.\n\\end{proposition}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Actual coefficient family permits every nonempty finite positive even exponent set including degree two. The coefficient domain is the exact open positivity and Xi.second(0)<1 domain; nonempty exponent set is paper admissibility (source lines238\u2013239). The source proposition also writes all finite sets; empty exponent set has no admissible vectors, so that case is vacuous. Actual functional is jointly C\u221e in coefficients and the open actual atomic chart.",
+      "related_lean_declarations": [
+        "Verification.SectionTwoTargets.proposition2_5_exact"
+      ],
+      "previous_source_id": "depth:proposition:2.4",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionTwoTargets.proposition2_5_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionTwoTargets.lean",
+          "sha256": "20482b0d631dec887c7acb65addcdbfc65cd09d2007d6ee2d05a6f8bc84e1df8"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoCoefficients.lean",
+          "sha256": "cee926ceaeb592393d3c1065e3def9888f6fba97b9934136c8c3723b0a559093"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "2.6",
+      "kind": "lemma",
+      "label": "lem:atomic-hessian",
+      "source_lines": {
+        "start": 788,
+        "end": 793
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:atomic-hessian}\nLet $\\Xi$ be admissible, and let $z\\in\\mathcal Z_r$ be a critical point of\n$z'\\mapsto\\Pp_\\Xi(\\nu_{z'})$.  If $f_{\\Xi,\\nu_z}''(q_i)<0$ for\n$1\\leq i\\leq r$, then the Hessian $D_z^2\\Pp_\\Xi(\\nu_z)$, which exists by\n\\zcref{prop:finite-step-regularity}, is positive definite.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Actual chart criticality and strictly negative contact curvature suffice for positive definite actual second Fr\u00e9chet derivative. Global minimality and positive Hessian are not assumptions. The original exact critical-Hessian result is retained and transferred by actual functional identity.",
+      "related_lean_declarations": [
+        "Verification.SectionTwoTargets.lemma2_6_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "checked_modules": [
+        {
+          "file": "DepthPaper/RevisedCriticalHessian.lean",
+          "sha256": "82127c49512dacd4e93f61056d5b2de5128417ebb7797102b87fd9d4b20ef30a"
+        }
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "proof_anchors": [
+        "Verification.SectionTwoTargets.lemma2_6_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionTwoTargets.lean",
+          "sha256": "20482b0d631dec887c7acb65addcdbfc65cd09d2007d6ee2d05a6f8bc84e1df8"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoVariation.lean",
+          "sha256": "7db1f5af24f40a5495151a4985b8c2115c7b56f4774f7e55c4de80d33aae8443"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "2.7",
+      "kind": "lemma",
+      "label": "lem:persistence",
+      "source_lines": {
+        "start": 804,
+        "end": 814
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:persistence}\nLet $\\Xi_n$, $n\\in\\mathbb N\\cup\\{\\infty\\}$, be admissible covariances with\n$\\Xi_n\\to\\Xi_\\infty$ in $C^3([0,1])$, let $z_n\\in\\mathcal Z_r$ with\n$z_n\\to z_\\infty\\in\\mathcal Z_r$, and write $f_n=f_{\\Xi_n,\\nu_{z_n}}$.\nThen $f_n\\to f_\\infty$ in $C^2([0,1])$.  Suppose further that\n$\\nu_{z_\\infty}$ is the nondegenerate $r$-RSB Parisi measure of\n$\\Xi_\\infty$, and that $z_n$ is a critical point of\n$z\\mapsto\\Pp_{\\Xi_n}(\\nu_z)$ for every $n\\in\\mathbb N$.  Then, for all\nsufficiently large $n$, $\\nu_{z_n}$ is the nondegenerate $r$-RSB Parisi measure of\n$\\Xi_n$.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "The sequence may change its finite even exponent set at every index; no fixed-degree smooth-family premise. C\u00b3 convergence means uniform convergence of the four actual compatible covariance derivatives; output is uniform convergence of all three closed-interval first-variation derivatives. Eventual nondegeneracy uses paper weak nondegeneracy and actual chart criticality; exact actual optimizer equality and r-RSB are conclusions. Both source subcriticality assumptions are explicit.",
+      "related_lean_declarations": [
+        "Verification.SectionTwoTargets.lemma2_7_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionTwoTargets.lemma2_7_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionTwoTargets.lean",
+          "sha256": "20482b0d631dec887c7acb65addcdbfc65cd09d2007d6ee2d05a6f8bc84e1df8"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPersistence.lean",
+          "sha256": "857d0cc0724a77d77b0cebe6b784dd79b82c7c333ee839d4adc7824c857cee73"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "2.8",
+      "kind": "proposition",
+      "label": "prop:stability",
+      "source_lines": {
+        "start": 816,
+        "end": 824
+      },
+      "statement_tex": "\\begin{proposition}\\label{prop:stability}\nLet $\\mathbf c_0\\in\\mathcal C_{\\mathscr P}$, and suppose that the Parisi\nmeasure $\\nu_{z_*}$ of $\\Xi_{\\mathbf c_0}$ is $r$-RSB and nondegenerate.\nThen there exist a neighborhood $\\mathcal V\\subset\\mathcal C_{\\mathscr P}$ of\n$\\mathbf c_0$ and a smooth map $z\\colon\\mathcal V\\to\\mathcal Z_r$ with\n$z(\\mathbf c_0)=z_*$ such that, for every $\\mathbf c\\in\\mathcal V$,\n$\\nu_{z(\\mathbf c)}$ is the nondegenerate $r$-RSB Parisi measure of\n$\\Xi_{\\mathbf c}$.\n\\end{proposition}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "The input is paper nondegeneracy only, on the actual positive subcritical coefficient domain. The actual positive Hessian is derived using RevisedNondegeneracy. The output neighborhood is open, contains the base point and lies in the admissible coefficient domain. The chart map is smooth, takes the correct base value and yields the actual unique nondegenerate r-RSB minimizer throughout. No nondegeneracy assumption is supplied for the continued chart.",
+      "related_lean_declarations": [
+        "Verification.SectionTwoTargets.proposition2_8_exact"
+      ],
+      "previous_source_id": "depth:proposition:2.7",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionTwoTargets.proposition2_8_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionTwoTargets.lean",
+          "sha256": "20482b0d631dec887c7acb65addcdbfc65cd09d2007d6ee2d05a6f8bc84e1df8"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPersistence.lean",
+          "sha256": "857d0cc0724a77d77b0cebe6b784dd79b82c7c333ee839d4adc7824c857cee73"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "2.9",
+      "kind": "lemma",
+      "label": "lem:replica-symmetric-seed",
+      "source_lines": {
+        "start": 849,
+        "end": 852
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:replica-symmetric-seed}\nThe covariance $\\Xi(q)=q^4/16$ has the nondegenerate\nreplica-symmetric Parisi measure $\\delta_0$.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Exact quartic q^4/16 has the actual unique delta-zero minimizer, source weak nondegeneracy and zero-RSB. The stronger strict negativity for every competing probability measure on (0,1] is also proved. Legacy seed targets are unchanged.",
+      "related_lean_declarations": [
+        "Verification.SectionTwoTargets.lemma2_9_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_anchors": [
+        "Verification.SectionTwoTargets.lemma2_9_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionTwoTargets.lean",
+          "sha256": "20482b0d631dec887c7acb65addcdbfc65cd09d2007d6ee2d05a6f8bc84e1df8"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoVariation.lean",
+          "sha256": "7db1f5af24f40a5495151a4985b8c2115c7b56f4774f7e55c4de80d33aae8443"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "3.1",
+      "kind": "lemma",
+      "label": "lem:temperature-mass-scaling",
+      "source_lines": {
+        "start": 936,
+        "end": 942
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:temperature-mass-scaling}\nIn this setting, for $0\\leq q\\leq q_{\\mathrm c}$ and $x\\in\\R$,\n\\[\n \\widetilde u(q,x)=\\frac1mu_{m^2\\Xi,\\nu}(q,mx)\n -\\frac m2\\bigl(\\Xi'(1)-\\Xi'(q_{\\mathrm c})\\bigr).\n\\]\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Lower potential is independently defined by the finite Gaussian recursion, with actual physical covariance jets, actual m-times-CDF cell levels, and terminal m^-1 log cosh(m x). Every actual finite-support probability measure below the cutoff admits the required finite CDF partition; existence is proved, including measures with no origin atom or zero origin mass. No finite-grid existence or CDF-constancy assumption remains in the final source-scope target. The exact scaled spatial variable, factor m^-1, cutoff-dependent additive constant -m/2*(Xi.first(1)-Xi.first(qc)), full closed time interval and qc\u22641 are proved via the genuine Cole\u2013Hopf chain. The theorem does not need subcriticality, strengthening the paper admissibility scope. Exact diffusion A.7 is handled separately.",
+      "related_lean_declarations": [
+        "Verification.SectionTwoTargets.lemma3_1_exact"
+      ],
+      "previous_source_id": "depth:lemma:3.1",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionTwoTargets.lemma3_1_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionTwoTargets.lean",
+          "sha256": "20482b0d631dec887c7acb65addcdbfc65cd09d2007d6ee2d05a6f8bc84e1df8"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoTemperature.lean",
+          "sha256": "4b058c69cb62b645a5a579826c320a4f7e6efec29f6ec32bf83caf8c64693333"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionTwoPartition.lean",
+          "sha256": "29c1bb4174f35f53c1879abd8c7764d7608ee5fc7923496665f8184bcc8f058e"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "3.2",
+      "kind": "lemma",
+      "label": "lem:entropy-identity",
+      "source_lines": {
+        "start": 992,
+        "end": 1000
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:entropy-identity}\nLet $\\Xi$ be admissible, let $\\nu=\\nu_z$ for some $z\\in\\mathcal Z_r$, and\nlet $X$ be the optimal diffusion of $\\nu$.  Then\n$m\\mapsto\\frac1m\\Pp_{m^2\\Xi}(\\nu)$ is smooth near $m=1$, and its derivative\nat $m=1$ equals\n\\[\n f_{\\Xi,\\nu}(1)-\\int_0^1f_{\\Xi,\\nu}\\dd\\nu-\\E \\mathfrak h(X_1).\n\\]\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Every valid atomic measure, without minimizer or subcriticality hypotheses: the actual temperature quotient m\u21a6m\u207b\u00b9 P_(m\u00b2\u039e)(\u03bd) is smooth for m>0 and has the exact printed derivative at one, including the actual terminal diffusion spin-entropy expectation.",
+      "related_lean_declarations": [
+        "Verification.RevisedTargets.entropySmooth_exact",
+        "Verification.RevisedTargets.entropyIdentity_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "checked_modules": [
+        {
+          "file": "DepthPaper/RevisedEntropyAtomicExpectation.lean",
+          "sha256": "6559da19b584ecc5a5e454d5563016a381b4e8b016498a0a0a6dc0e5058c6698"
+        }
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "proof_anchors": [
+        "Verification.RevisedTargets.entropySmooth_exact",
+        "Verification.RevisedTargets.entropyIdentity_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/RevisedTargets.lean",
+          "sha256": "3087169820341c4a1960ce4e50a3f2ed746469f3e6027d4539ec2d3a38819499"
+        },
+        {
+          "path": "DepthPaper/RevisedEntropyIdentity.lean",
+          "sha256": "287376341a667818ca13ac01106d639555b82acdb58b86aca9ea597f3311eef1"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "3.3",
+      "kind": "corollary",
+      "label": "cor:positive-entropy",
+      "source_lines": {
+        "start": 1002,
+        "end": 1008
+      },
+      "statement_tex": "\\begin{corollary}\\label{cor:positive-entropy}\nLet $X$ be the optimal diffusion of the Parisi measure $\\mu_*$ of $\\Xi$.\nThen\n\\[\n s_\\Xi=\\mathfrak p(1)-\\mathfrak p'(1)=\\E \\mathfrak h(X_1)-f_{\\Xi,\\mu_*}(1)>0.\n\\]\n\\end{corollary}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "In the section\u2019s atomic paper-nondegenerate, subcritical context, physical pressure entropy equals the actual terminal spin-entropy expectation minus f(1) and is strictly positive. Pressure differentiability and the internal Hessian invariant are derived. This corollary is not stated for an arbitrary seed without the standing hypotheses.",
+      "related_lean_declarations": [
+        "Verification.RevisedTargets.positiveEntropy_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "checked_modules": [
+        {
+          "file": "DepthPaper/RevisedEntropy.lean",
+          "sha256": "5a9fbb5b63e4f42fc92a8d9b5885580560a09d6539e538c828ce6de0167d4f02"
+        }
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "proof_anchors": [
+        "Verification.RevisedTargets.positiveEntropy_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/RevisedTargets.lean",
+          "sha256": "3087169820341c4a1960ce4e50a3f2ed746469f3e6027d4539ec2d3a38819499"
+        },
+        {
+          "path": "DepthPaper/RevisedEntropy.lean",
+          "sha256": "5a9fbb5b63e4f42fc92a8d9b5885580560a09d6539e538c828ce6de0167d4f02"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "3.4",
+      "kind": "remark",
+      "label": "rem:entropy",
+      "source_lines": {
+        "start": 1069,
+        "end": 1088
+      },
+      "statement_tex": "\\begin{remark}\\label{rem:entropy}\nThe quantity $s_\\Xi$ is the limit of the expected entropy per spin\nof the Gibbs measure $G_N(\\sigma)\\propto e^{H_N(\\sigma)}$.  Indeed, write\n$Z_N=\\sum_\\sigma e^{H_N(\\sigma)}$ and $\\langle\\cdot\\rangle$ for the average\nunder $G_N$.  The entropy\n$S_N=-\\sum_\\sigma G_N(\\sigma)\\log G_N(\\sigma)$ equals\n$\\log Z_N-\\langle H_N\\rangle$, and $\\mathfrak p_N'(1)=N^{-1}\\E\\langle\nH_N\\rangle$, where differentiation under $\\E$ is justified because\n$|\\partial_b\\log\\sum_\\sigma e^{bH_N(\\sigma)}|\\leq\\max_\\sigma|H_N(\\sigma)|$,\nwhich is integrable.  Hence $N^{-1}\\E S_N=\\mathfrak p_N(1)-\\mathfrak p_N'(1)$.  By\nconvexity,\n$\\frac1\\varepsilon(\\mathfrak p_N(1)-\\mathfrak p_N(1-\\varepsilon))\n\\leq\\mathfrak p_N'(1)\\leq\n\\frac1\\varepsilon(\\mathfrak p_N(1+\\varepsilon)-\\mathfrak p_N(1))$ for\n$\\varepsilon>0$.  We let $N\\to\\infty$ and then $\\varepsilon\\to0$.  Since\n$\\mathfrak p$ is differentiable at $1$ (see also\n\\cite{Panchenko2008Differentiability}), we find that\n$\\mathfrak p_N'(1)\\to\\mathfrak p'(1)$, and hence\n$N^{-1}\\E S_N\\to s_\\Xi$.\n\\end{remark}",
+      "coverage_status": "remark_context",
+      "scope_note": "Explanatory remark, not a separately selected theorem or a claim of complete mechanization of every sentence.",
+      "related_lean_declarations": [],
+      "previous_source_id": null,
+      "current_exact_target_checked": false,
+      "prepared_revision_verified": false,
+      "proof_anchors": [],
+      "verification_scope": "Context and cited background; no standalone exact-target certification.",
+      "proved_scope_mechanically_verified": false
+    },
+    {
+      "number": "4.1",
+      "kind": "lemma",
+      "label": "lem:lower-recursion",
+      "source_lines": {
+        "start": 1267,
+        "end": 1289
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:lower-recursion}\nFor every sufficiently large even $p$ and every\n$(\\theta,Q)\\in\\Theta\\times S_p$,\n\\begin{equation}\\label{eq:candidate-decomposition}\n \\Pp_p(\\theta,Q)\n =\n F(\\theta)\n +\\mathcal T_p(\\theta,Q)\n +\\mathcal R_p(\\theta,Q),\n \\qquad\n \\mathcal T_p(\\theta,Q)=\\frac{1-m}{2}\\int_Q^1(1-q)\\Psi''(q)\\dd q,\n\\end{equation}\nwhere the remainder $\\mathcal R_p=\\Pp_p-F-\\mathcal T_p$ is $C^4$ on\n$\\Theta\\times S_p$, with\n\\begin{equation}\\label{eq:lower-remainder-bound}\n \\max_{|\\mathbf j|\\leq4}\n \\sup_{\\Theta\\times S_p}\n \\bigl|\n \\partial_{z,\\lambda,m,Q}^{\\mathbf j}\\mathcal R_p\n \\bigr|\n \\leq Cp^Ae^{-cp}.\n\\end{equation}\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Every compact set K of valid finite atomic coordinates, positive mass/coupling lower bounds, all exponentially thin endpoint strips, all sufficiently large even p; actual P=F+T+R, ordinary C\u221e extension R, all coordinate-word derivatives through order 4 uniformly exponentially small.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_lower_recursion",
+        "Verification.SectionFourTargets.lowerRecursion_exact"
+      ],
+      "previous_source_id": "depth:lemma:4.2",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.lowerRecursion_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourReduction.lean",
+          "sha256": "db1bdd2900480bb1135293b9c176220ccf066ef5a73a676e30fd5ae0e49cae49"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourDeficit.lean",
+          "sha256": "585fb49adc81c595adf44f94ab05c038b5c4e95cb47e30e5ba22955d8d0cce13"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.2",
+      "kind": "lemma",
+      "label": "lem:deficit",
+      "source_lines": {
+        "start": 1320,
+        "end": 1339
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:deficit}\nFor every sufficiently large even $p$, the magnetization deficit $\\mathcal A_p$ is $C^2$\non $\\Theta\\times S_p$, and, for all $(\\theta,Q)\\in\\Theta\\times S_p$,\n\\begin{align}\n \\max_{|\\mathbf j|\\leq2}\n \\bigl|\\partial_{z,\\lambda,m,Q}^{\\mathbf j}\\mathcal A_p(\\theta,Q)\\bigr|\n &\\leq Cp^Ae^{-cp},\n \\label{eq:endpoint-crude}\\\\\n cp^{-1/2}e^{-m^2\\lambda p/2}\n \\leq\\mathcal A_p(\\theta,Q)\n &\\leq Cp^{-1/2}e^{-m^2\\lambda p/2}.\n \\label{eq:endpoint-two-sided}\n\\end{align}\nMoreover, the mean squared magnetization $\\Gamma$ of $\\mu_{z,m,Q}$ for $\\Psi$\nsatisfies\n\\begin{equation}\\label{eq:deficit-intermediate}\n 1-\\Gamma(q)\\leq4e^{-m^2(\\Psi'(q)-\\Psi'(\\bar q))/2},\n \\qquad \\bar q\\leq q\\leq Q.\n\\end{equation}\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Same arbitrary compact valid data. Endpoint actual deficit equals the explicit smooth remainder, full operator and coordinate C\u00b2 bounds, two-sided p^(-1/2)exp(-m\u00b2\u03bbp/2) estimate. Printed prefactor 4 intermediate estimate holds at every q\u2208[qc,Q], including both endpoints, with no remaining-variance restriction; auxiliary prefactor 2 holds q>qc.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_endpoint_deficit",
+        "GeneralDepthPaper.revised_intermediate_deficit",
+        "GeneralDepthPaper.revised_intermediate_deficit_two",
+        "Verification.SectionFourTargets.endpointDeficit_exact",
+        "Verification.SectionFourTargets.intermediateDeficit_exact"
+      ],
+      "previous_source_id": "depth:lemma:4.3",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.endpointDeficit_exact",
+        "Verification.SectionFourTargets.intermediateDeficit_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourReduction.lean",
+          "sha256": "db1bdd2900480bb1135293b9c176220ccf066ef5a73a676e30fd5ae0e49cae49"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourDeficit.lean",
+          "sha256": "585fb49adc81c595adf44f94ab05c038b5c4e95cb47e30e5ba22955d8d0cce13"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.3",
+      "kind": "proposition",
+      "label": "prop:uniform-reduction",
+      "source_lines": {
+        "start": 1343,
+        "end": 1354
+      },
+      "statement_tex": "\\begin{proposition}\\label{prop:uniform-reduction}\nFor every sufficiently large even $p$ and every $\\theta\\in\\Theta$, the\nlocation equation \\eqref{eq:top-equation} has exactly one solution $Q=Q_p(\\theta)$\nin $S_p$.  It lies in the interior of $S_p$ and satisfies\n\\begin{equation}\\label{eq:transition-Q-root}\n C^{-1}p^{-1/2}e^{-m^2\\lambda p/2}\n \\leq\n 1-Q_p(\\theta)\n \\leq\n Cp^{-1/2}e^{-m^2\\lambda p/2}.\n\\end{equation}\n\\end{proposition}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Constructed from weak paper nondegeneracy and separate \u039e\u2033(0)<1. Actual existing endpoint selector lies strictly in exact paper Sp=[1\u2212exp(\u2212m0\u00b2\u03bb_-p/4),1\u2212exp(\u2212\u03bb_+p)]; unique actual \u0393(Q)=Q root among all overlaps in that Sp; uniform two-sided scale. Internally a larger root-search strip is harmless and explicitly documented. Independent uniform positive lower/upper constants b,D can be replaced by a common C with C^-1\u2264b and D\u2264C.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.LimitingStandingData.revised_endpoint_root_and_reduction_data",
+        "GeneralDepthPaper.revised_prepared_endpoint_root_and_reduction",
+        "Verification.SectionFourTargets.preparedEndpointReduction_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.preparedEndpointReduction_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourWindows.lean",
+          "sha256": "2840dcc7f03e84dca5318ccc70f5767c4840bd419ede362f9983b0bb697f7c76"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.4",
+      "kind": "proposition",
+      "label": "prop:reduced-functional",
+      "source_lines": {
+        "start": 1407,
+        "end": 1423
+      },
+      "statement_tex": "\\begin{proposition}\\label{prop:reduced-functional}\nFor every sufficiently large even $p$, the following hold.\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n \\item The reduced functional $\\widehat\\Pp_p$ is $C^3$ and satisfies\n\\begin{equation}\\label{eq:envelope}\n \\partial_j\\widehat\\Pp_p(\\theta)\n =\n \\partial_j\\Pp_p\\bigl(\\theta,Q_p(\\theta)\\bigr)\n \\quad\\text{for every coordinate $\\theta_j$ of $\\theta$}.\n\\end{equation}\n \\item The reduced functional satisfies\n\\begin{equation}\\label{eq:transition-C3-limit}\n \\bigl\\|\\widehat\\Pp_p-F\\bigr\\|_{C^3(\\Theta)}\n \\leq Cp^Ae^{-cp}.\n\\end{equation}\n\\end{enumerate}\n\\end{proposition}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Same constructed data and exact paper window. Actual Q-selector C\u221e, first/second full operator jets exponentially small; actual reduced objective C\u221e, equals actual two-level Parisi functional; full lower-parameter envelope identity; C\u00b3 error to exact limiting objective; positive Q-Hessian for m<1.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_prepared_endpoint_root_and_reduction",
+        "Verification.SectionFourTargets.preparedEndpointReduction_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.preparedEndpointReduction_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourWindows.lean",
+          "sha256": "2840dcc7f03e84dca5318ccc70f5767c4840bd419ede362f9983b0bb697f7c76"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.5",
+      "kind": "proposition",
+      "label": "prop:stationary-branches",
+      "source_lines": {
+        "start": 1436,
+        "end": 1457
+      },
+      "statement_tex": "\\begin{proposition}\\label{prop:stationary-branches}\nFor every sufficiently large even $p$, the following hold.\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n \\item If $r\\geq1$, there exists a unique map\n $z_p\\colon\\Lambda\\times[m_0,1]\\to\\operatorname{int}\\cN$ such that\n $\\partial_z\\widehat\\Pp_p(z_p(\\lambda,m),\\lambda,m)=0$.  It is $C^2$ and\n converges to $(\\lambda,m)\\mapsto z(m)$ in $C^2(\\Lambda\\times[m_0,1])$, and\n $D_z^2\\widehat\\Pp_p\\succeq\\kappa_{\\mathrm z}I$ on $\\Theta$.  If $r=0$, we set\n $z_p=z_*$.\n\n \\item Let\n \\[\n  J_p(\\lambda,m)=\\widehat\\Pp_p\\bigl(z_p(\\lambda,m),\\lambda,m\\bigr),\n  \\qquad\n  g_p(\\lambda,m)=\\partial_mJ_p(\\lambda,m).\n \\]\n Then\n $g_p(\\lambda,m)=\\partial_m\\widehat\\Pp_p(z_p(\\lambda,m),\\lambda,m)$, $J_p\\to\n J_\\lambda$ in $C^3(\\Lambda\\times[m_0,1])$, and $g_p\\to J_\\lambda'$ in\n $C^2(\\Lambda\\times[m_0,1])$.\n\\end{enumerate}\n\\end{proposition}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Weak paper ND plus subcriticality constructs d. Exact symmetric \u039b \u00d7 [m0,1]; lower selector uniquely solves actual lower stationary equation in closed N and is interior; actual lower Hessian\u2265margin/2 ||v||\u00b2; branch and actual gp converge with every mixed derivative through order 2. Jp is actual reduced objective composed with actual branch, gp is both frozen mass partial and derivative of Jp. Jp\u2192P(m\u00b2\u039e)/m+\u03bbm/2 with every mixed derivative through order 3, plus stronger uniform exponential C\u00b3 bounds and full envelope gradient. r=0 included.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_stationary_branches",
+        "GeneralDepthPaper.LimitingStandingData.revised_stationary_branches_data",
+        "GeneralDepthPaper.LimitingStandingData.revisedScalarObjective_C3_uniform_limit",
+        "GeneralDepthPaper.LimitingStandingData.revisedScalarObjective_fullDerivative_eventually",
+        "Verification.SectionFourTargets.stationaryBranches_exact",
+        "Verification.OptimizedValueTargets.prop4_5_full_parameter_envelope",
+        "Verification.OptimizedValueTargets.prop4_5_optimized_value_C3",
+        "Verification.OptimizedValueTargets.prop4_5_optimized_value_C3_exponential"
+      ],
+      "previous_source_id": "depth:proposition:4.5",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.stationaryBranches_exact",
+        "Verification.OptimizedValueTargets.prop4_5_full_parameter_envelope",
+        "Verification.OptimizedValueTargets.prop4_5_optimized_value_C3",
+        "Verification.OptimizedValueTargets.prop4_5_optimized_value_C3_exponential"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourStationarity.lean",
+          "sha256": "14749205c1364fb47f5b2e15cb47aff080ce7c8bee2b68ef91ca63445da92716"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourEnvelope.lean",
+          "sha256": "66986e662062068186454f9c5928bc5216dd8e22aeb873df623cd9deadfa95db"
+        },
+        {
+          "path": "Verification/OptimizedValueTargets.lean",
+          "sha256": "69991bb43605c01c90d048812e7fd2a49640a1c183f0904a0894079f1c3e50a7"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.6",
+      "kind": "proposition",
+      "label": "prop:scalar-bifurcation",
+      "source_lines": {
+        "start": 1463,
+        "end": 1475
+      },
+      "statement_tex": "\\begin{proposition}\\label{prop:scalar-bifurcation}\nFor every sufficiently large even $p$, we have\n$\\partial_mg_p\\geq\\kappa_{\\mathrm m}$ and $\\partial_\\lambda g_p\\geq\\frac14$\non $\\Lambda\\times[m_0,1]$.  There exists a unique\n$\\lambda_{\\mathrm c,p}\\in\\Lambda$ such that\n$g_p(\\lambda_{\\mathrm c,p},1)=0$. The sign of $g_p(\\lambda,1)$ is that of\n$\\lambda-\\lambda_{\\mathrm c,p}$.  Moreover,\n$\\lambda_{\\mathrm c,p}\\to\\lambda_{\\mathrm c}$ as $p\\to\\infty$.  For every\n$\\lambda\\in\\Lambda$, the function $J_p(\\lambda,\\cdot)$ has a unique\nminimizer $m_{p,\\lambda}$ on $[m_0,1]$.  If $\\lambda\\leq\\lambda_{\\mathrm c,p}$,\nthen $m_{p,\\lambda}=1$; if $\\lambda>\\lambda_{\\mathrm c,p}$, then\n$m_0<m_{p,\\lambda}<1$ and $g_p(\\lambda,m_{p,\\lambda})=0$.\n\\end{proposition}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Exact printed symmetric \u039b=[ell(1)\u22122\u03b7,ell(1)+2\u03b7], including endpoints. Positive mass partial\u2265slope/2 and coupling partial\u22651/4; unique critical gp(\u03bb,1)=0 is interior, has exact strict/equality sign equivalences, converges along even degrees to ell(1). Explicit uniqueness among all bare IsMinOn points, as well as \u2203! selected actual IsMinOn Jp over [m0,1]; m=1 at/below critical and interior with gp=0 above. New derivative-sign proof establishes actual scalar constrained minimization, and inverse-root proof extends original +\u03b7 interval to full +2\u03b7.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_scalar_bifurcation",
+        "GeneralDepthPaper.LimitingStandingData.revised_scalar_minimum_eventually",
+        "GeneralDepthPaper.LimitingStandingData.revised_bifurcatingMass_eventually",
+        "Verification.SectionFourTargets.scalarBifurcation_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.scalarBifurcation_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourScalar.lean",
+          "sha256": "2480265ef347bfde080897b0f75f5508a743a00327f622ca7281d17713c55c00"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.7",
+      "kind": "definition",
+      "label": "def:candidates",
+      "source_lines": {
+        "start": 1510,
+        "end": 1520
+      },
+      "statement_tex": "\\begin{definition}\\label{def:candidates}\nFor $(\\lambda,m)\\in\\Lambda\\times[m_0,1]$, write\n\\[\n \\mu_p(\\lambda,m)=m\\nu_{z_p(\\lambda,m)}+(1-m)\\delta_Q,\n \\qquad Q=Q_p(z_p(\\lambda,m),\\lambda,m).\n\\]\nThis is the candidate minimizer whose lower atoms have total mass $m$.  The location $Q$ and the\nlower coordinates $z$ are stationary; the mass $m$ remains free until\nthe scalar minimization selects $m=m_{p,\\lambda}$.  When $m=1$, the\npoint $Q$ has zero mass.\n\\end{definition}",
+      "coverage_status": "exact_revised_definition",
+      "scope_note": "Actual measure equals m \u03bd_z+(1\u2212m)\u03b4_Q on exact paper window; at m=1 equals \u03bd_z. Actual coordinate, endpoint and mass-response selectors are those in Sections 4.3\u20134.6, with all valid-atomic proof obligations discharged.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_candidate_measure",
+        "GeneralDepthPaper.revised_candidate_mass_one",
+        "GeneralDepthPaper.revised_stationary_candidate_geometry",
+        "Verification.SectionFourTargets.candidateGeometry_exact"
+      ],
+      "previous_source_id": "depth:definition:4.6",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.candidateGeometry_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourGeometry.lean",
+          "sha256": "9fd5bed84a64d57fa173e380e9bee1e5dfe100e34e58ed6d95559e31d953a236"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.8",
+      "kind": "lemma",
+      "label": "lem:stationary-candidates",
+      "source_lines": {
+        "start": 1526,
+        "end": 1532
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:stationary-candidates}\nFor every sufficiently large even $p$ and every\n$(\\lambda,m)\\in\\Lambda\\times[m_0,1]$, let $z=z_p(\\lambda,m)$ and\n$Q=Q_p(z,\\lambda,m)$, and let $f$ be the first-variation function of\n$\\mu_p(\\lambda,m)$ for $\\Psi$.  Then $f=0$ on $\\supp\\nu_z$, $f'=0$ on\n$\\supp\\nu_z\\setminus\\{0\\}$, $f'(Q)=0$, and $g_p(\\lambda,m)=f(Q)$.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "On all of exact \u039b\u00d7[m0,1], genuine f vanishes at lower support, literal ordinary derivative of genuine f vanishes at positive lower atoms and Q, and gp=f(Q). Intrinsic derivative field equals the derivative within [0,1]; at interior contacts this is ordinary derivative.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_stationary_candidate_geometry",
+        "Verification.SectionFourTargets.candidateGeometry_exact"
+      ],
+      "previous_source_id": "depth:lemma:4.7",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.candidateGeometry_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourGeometry.lean",
+          "sha256": "9fd5bed84a64d57fa173e380e9bee1e5dfe100e34e58ed6d95559e31d953a236"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.9",
+      "kind": "lemma",
+      "label": "lem:lower-geometry",
+      "source_lines": {
+        "start": 1585,
+        "end": 1592
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:lower-geometry}\nFor every sufficiently large even $p$ and every\n$(\\lambda,m)\\in\\Lambda\\times[m_0,1]$, the first-variation function $f$ of\nthe candidate minimizer $\\mu_p(\\lambda,m)$, with $z=z_p(\\lambda,m)$,\nsatisfies $f\\leq0$ on $[0,\\bar q]$,\n$\\{q\\in[0,\\bar q]:f(q)=0\\}=\\supp\\nu_z$, $f''(q)<0$ at every positive\n$q\\in\\supp\\nu_z$, and $f(\\bar q)\\leq-3\\gamma$.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Constructed common strict cutoff margin \u03b3>0. All sufficiently large even p and all exact-window \u03b8: f\u22640 on [0,qc], zero iff membership in actual lower support, ordinary second derivative<0 at every positive lower support atom, f(qc)\u2264\u22123\u03b3.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_stationary_candidate_geometry",
+        "Verification.SectionFourTargets.candidateGeometry_exact"
+      ],
+      "previous_source_id": "depth:lemma:4.9",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.candidateGeometry_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourGeometry.lean",
+          "sha256": "9fd5bed84a64d57fa173e380e9bee1e5dfe100e34e58ed6d95559e31d953a236"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.10",
+      "kind": "proposition",
+      "label": "prop:high-overlap-geometry",
+      "source_lines": {
+        "start": 1612,
+        "end": 1631
+      },
+      "statement_tex": "\\begin{proposition}\\label{prop:high-overlap-geometry}\nFor every sufficiently large even $p$ and every\n$(\\lambda,m)\\in\\Lambda\\times[m_0,1]$, let $f$ and $\\Gamma$ be the\nfirst-variation function and the mean squared magnetization of the candidate\nminimizer $\\mu_p(\\lambda,m)$, and let $z=z_p(\\lambda,m)$ and\n$Q=Q_p(z,\\lambda,m)$.  Then $\\bar q<\\hat q_p<Q$,\n\\begin{equation}\\label{eq:intermediate-negative}\n f(q)\\leq-\\gamma,\n \\qquad\n \\bar q\\leq q\\leq\\hat q_p,\n\\end{equation}\nwith $\\gamma$ from \\eqref{eq:cutoff-choice}, and\n\\begin{equation}\\label{eq:Gamma-slope-tail}\n \\Gamma'(q)\\leq\\frac12,\n \\qquad\n \\hat q_p\\leq q\\leq1.\n\\end{equation}\nConsequently, $f$ is strictly increasing on $[\\hat q_p,Q]$ and strictly\ndecreasing on $[Q,1]$, and $f''(Q)<0$.\n\\end{proposition}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Common constructed exact L=10/m0\u00b2. Exact threshold a\u2208(0,1) uniquely satisfies \u03bbp a^(p\u22121)=(10/m0\u00b2)logp. The implementation exponential/log expression is additionally identified by that printed defining equation and uniqueness. qc<a<Q<1, f\u2264\u2212\u03b3 on [qc,a], intrinsic derivative of actual \u0393\u22641/2 on [a,1] (including terminal endpoint), strict monotonicity/antitonicity about Q and ordinary f\u2033(Q)<0.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_stationary_candidate_geometry",
+        "GeneralDepthPaper.LimitingStandingData.revised_high_overlap_geometry_exact",
+        "Verification.SectionFourTargets.candidateGeometry_exact"
+      ],
+      "previous_source_id": "depth:proposition:4.10",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.candidateGeometry_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourGeometry.lean",
+          "sha256": "9fd5bed84a64d57fa173e380e9bee1e5dfe100e34e58ed6d95559e31d953a236"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourHighGeometry.lean",
+          "sha256": "0685e1534cdb7b6b01e697905f18b3b3e31e7217077ccdcaa073ac317f696948"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.11",
+      "kind": "corollary",
+      "label": "cor:global-sign",
+      "source_lines": {
+        "start": 1700,
+        "end": 1704
+      },
+      "statement_tex": "\\begin{corollary}\\label{cor:global-sign}\nIn the setting of \\zcref{prop:high-overlap-geometry}, if $f(Q)<0$, then\n$f\\leq0$ on $[0,1]$ and $\\{f=0\\}=\\supp\\nu_z$; if $f(Q)=0$, then $f\\leq0$\non $[0,1]$ and $\\{f=0\\}=\\supp\\nu_z\\cup\\{Q\\}$.\n\\end{corollary}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Literal conditional global-sign conclusions: if f(Q)<0, f globally nonpositive with exactly lower support as its zeros; if f(Q)=0, f globally nonpositive with exactly lower support\u222a{Q} as its zeros. These conditionals are not claimed to imply an actual minimizer for arbitrary m when f(Q)<0; full selected-mass minimization is revised 4.12.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_stationary_candidate_geometry",
+        "Verification.SectionFourTargets.candidateGeometry_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.candidateGeometry_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedSectionFourGeometry.lean",
+          "sha256": "9fd5bed84a64d57fa173e380e9bee1e5dfe100e34e58ed6d95559e31d953a236"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "4.12",
+      "kind": "theorem",
+      "label": "thm:gardner",
+      "source_lines": {
+        "start": 1722,
+        "end": 1768
+      },
+      "statement_tex": "\\begin{theorem}\\label{thm:gardner}\nLet $r\\geq0$, and let $\\Xi$ be an admissible covariance whose Parisi measure\n$\\mu_*$ is $r$-RSB and nondegenerate.  Define\n$\\mathfrak p(b)=\\inf_{\\mu\\in\\M}\\Pp_{b^2\\Xi}(\\mu)$,\n$s_\\Xi=\\mathfrak p(1)-\\mathfrak p'(1)$, and $\\lambda_{\\mathrm c}=2s_\\Xi$.\nThere exist $\\eta\\in(0,\\lambda_{\\mathrm c})$, $a_*<1$, and $C<\\infty$ such\nthat, for every sufficiently large even integer $p$, there exists\n$\\lambda_{\\mathrm c,p}\\in(\\lambda_{\\mathrm c}-\\eta,\\lambda_{\\mathrm c}+\\eta)$\nwith the following properties.  For\n$\\lambda\\in[\\lambda_{\\mathrm c}-\\eta,\\lambda_{\\mathrm c}+\\eta]$, the\ncovariance $\\Xi_{p,\\lambda}(q)=\\Xi(q)+\\lambda q^p$ has a unique Parisi\nmeasure $\\mu_{p,\\lambda}$, and:\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n \\item If $\\lambda<\\lambda_{\\mathrm c,p}$, then $\\mu_{p,\\lambda}$ is\n $r$-RSB and nondegenerate, and $\\supp\\mu_{p,\\lambda}\\subset[0,a_*]$.\n\n \\item If $\\lambda=\\lambda_{\\mathrm c,p}$, then $\\mu_{p,\\lambda}$ is\n $r$-RSB and $\\supp\\mu_{p,\\lambda}\\subset[0,a_*]$.  Its first-variation\n function is nonpositive and vanishes exactly on $\\supp\\mu_{p,\\lambda}$ and\n at one further point $Q\\in(a_*,1)$.  This point satisfies, with $m=1$,\n \\begin{equation}\\label{eq:gardner-location}\n  C^{-1}p^{-1/2}e^{-m^2\\lambda p/2}\n  \\leq\n  1-Q\n  \\leq\n  Cp^{-1/2}e^{-m^2\\lambda p/2}.\n \\end{equation}\n In particular, condition~(i) of \\zcref{def:nondegenerate}\n fails, so $\\mu_{p,\\lambda}$ is degenerate.\n\n \\item If $\\lambda>\\lambda_{\\mathrm c,p}$, then\n \\[\n  \\mu_{p,\\lambda}=m\\nu+(1-m)\\delta_Q,\n \\]\n where $m\\in(0,1)$, $\\nu$ is an $r$-RSB probability measure with\n $\\supp\\nu\\subset[0,a_*]$, and $Q\\in(a_*,1)$ satisfies\n \\eqref{eq:gardner-location} with this value of $m$.  Thus $\\mu_{p,\\lambda}$ is $(r+1)$-RSB.  It\n is also nondegenerate.\n\\end{enumerate}\nMoreover, $\\lambda_{\\mathrm c,p}\\to\\lambda_{\\mathrm c}$ as $p\\to\\infty$.\nBy~(i)--(iii), the Parisi measure of $\\Xi_{p,\\lambda}$ is $r$-RSB for\n$\\lambda\\in[\\lambda_{\\mathrm c}-\\eta,\\lambda_{\\mathrm c,p}]$ and\n$(r+1)$-RSB for $\\lambda\\in(\\lambda_{\\mathrm c,p},\\lambda_{\\mathrm c}+\\eta]$,\nso $\\lambda_{\\mathrm c,p}$ is the unique point of\n$[\\lambda_{\\mathrm c}-\\eta,\\lambda_{\\mathrm c}+\\eta]$ at which\nthe number of RSB steps changes.\n\\end{theorem}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Quadratic-inclusive covariance and weak paper nondegeneracy plus \u03be\u2033(0)<1 construct all standing witnesses. The target gives actual unique probability minimizers, exact depth equivalences, contacts, off-critical weak nondegeneracy, one common inclusive support cutoff and uniform endpoint constant; the zero-mass top contact at criticality is retained.",
+      "related_lean_declarations": [
+        "Verification.RevisedTargets.geometry_exact"
+      ],
+      "previous_source_id": "depth:theorem:5.1",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "checked_modules": [
+        {
+          "file": "GeneralDepthPaper/RevisedGeometry.lean",
+          "sha256": "a02b280b48046382ba53142d0aa52d70e0f6a1b5755ce1f4c1bb6d39c3e8dc71"
+        }
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "proof_anchors": [
+        "Verification.RevisedTargets.geometry_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/RevisedTargets.lean",
+          "sha256": "3087169820341c4a1960ce4e50a3f2ed746469f3e6027d4539ec2d3a38819499"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedGeometry.lean",
+          "sha256": "a02b280b48046382ba53142d0aa52d70e0f6a1b5755ce1f4c1bb6d39c3e8dc71"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedTransition.lean",
+          "sha256": "f0394dbb3fd1aa9f636d7c6616553c85ea62587cc7667d183c2ae1971b7b64c2"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "5.1",
+      "kind": "proposition",
+      "label": "prop:iteration",
+      "source_lines": {
+        "start": 1814,
+        "end": 1818
+      },
+      "statement_tex": "\\begin{proposition}\\label{prop:iteration}\nFor every integer $k\\geq0$, there exist even integers\n$4=p_0<p_1<\\cdots<p_k$ and positive coefficients $c_0,\\ldots,c_k$ such that\n$\\sum_{j=0}^kc_jq^{p_j}$ has a nondegenerate $k$-RSB Parisi measure.\n\\end{proposition}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "For every k\u22650 the actual ordered positive even polynomial construction begins at degree four and produces the exact k-RSB unique minimizer with a stronger internal nondegeneracy conclusion. This is a stronger constructed output, not an extra hypothesis on the paper existence statement.",
+      "related_lean_declarations": [
+        "Verification.arbitraryDepthIteration_exact",
+        "DepthPaper.arbitrary_depth_iteration",
+        "DepthPaper.arbitrary_depth_polynomial"
+      ],
+      "previous_source_id": "depth:proposition:6.1",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_anchors": [
+        "Verification.arbitraryDepthIteration_exact",
+        "DepthPaper.arbitrary_depth_iteration",
+        "DepthPaper.arbitrary_depth_polynomial"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/NumberedTargets.lean",
+          "sha256": "52161d17712b3af014eacc7fcc9db5dbd1dac75f443985dedfbb76a744f0839f"
+        },
+        {
+          "path": "DepthPaper/AllDepthIteration.lean",
+          "sha256": "55e8330a40bcff0accf8c31f685008fb4c940cac48d2c904a97edd724c6e0b3e"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "5.2",
+      "kind": "corollary",
+      "label": "cor:gardner-asymptotics",
+      "source_lines": {
+        "start": 1873,
+        "end": 1902
+      },
+      "statement_tex": "\\begin{corollary}\\label{cor:gardner-asymptotics}\nLet $\\eta$ be as in \\zcref{thm:gardner}, and recall that\n$\\kappa_\\Xi=\\mathfrak p''(1)+2s_\\Xi>0$ (see \\eqref{eq:J1}).\nFor every sufficiently large even $p$, let\n$g_p$ be the function of \\zcref{prop:stationary-branches}(ii), and define\n\\[\n \\kappa_p\n =\n \\frac{g_p^m}{2g_p^\\lambda},\n \\qquad\n g_p^\\lambda=\\partial_\\lambda g_p(\\lambda_{\\mathrm c,p},1),\n \\qquad\n g_p^m=\\partial_mg_p(\\lambda_{\\mathrm c,p},1).\n\\]\nThen $\\kappa_p>0$ and\n$\\kappa_p\\to\\kappa_\\Xi$.  Moreover, there exists $C<\\infty$ such that, for\nevery\nsufficiently large even $p$ and every\n$\\lambda=\\lambda_{\\mathrm c,p}+\\delta$ with $0<\\delta\\leq\\eta/2$, the mass\n$1-m$ of the new atom in the Parisi measure\n$\\mu_{p,\\lambda}=m\\nu+(1-m)\\delta_Q$ of \\zcref{thm:gardner}(iii) satisfies\n\\begin{equation}\\label{eq:gardner-uniform-mass-law}\n \\left|1-m-\\frac{\\delta}{2\\kappa_p}\\right|\n \\leq C\\delta^2,\n\\end{equation}\nand its location $Q$ satisfies\n\\begin{equation}\\label{eq:gardner-location-log}\n \\Bigl|\\log\\frac1{1-Q}-\\frac{m^2\\lambda p}2-\\frac12\\log p\\Bigr|\\leq C.\n\\end{equation}\n\\end{corollary}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Under the same universal weak-nondegenerate/subcritical seed input, actual scalar-objective mass derivatives identify positive \u03ba_p with the critical derivative ratio; \u03ba_p tends to the physical-pressure \u03ba along even degrees. Uniform quadratic mass error, the logarithmic endpoint formula retaining actual m\u00b2, and the diagonal small-o law have their printed windows and quantifiers. Conditional standing-data derivative helpers are not independent universal results.",
+      "related_lean_declarations": [
+        "Verification.RevisedTargets.asymptotics_exact"
+      ],
+      "previous_source_id": "depth:corollary:5.2",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "checked_modules": [
+        {
+          "file": "GeneralDepthPaper/RevisedAsymptotics.lean",
+          "sha256": "df06984b68a6e6c869bb4c693607afb57375ce17ae6c15537ad3854ba9d3e770"
+        }
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "proof_anchors": [
+        "Verification.RevisedTargets.asymptotics_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/RevisedTargets.lean",
+          "sha256": "3087169820341c4a1960ce4e50a3f2ed746469f3e6027d4539ec2d3a38819499"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedAsymptotics.lean",
+          "sha256": "df06984b68a6e6c869bb4c693607afb57375ce17ae6c15537ad3854ba9d3e770"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "5.3",
+      "kind": "remark",
+      "label": "rem:gardner-asymptotics",
+      "source_lines": {
+        "start": 1944,
+        "end": 1957
+      },
+      "statement_tex": "\\begin{remark}\\label{rem:gardner-asymptotics}\nBy \\eqref{eq:gardner-uniform-mass-law}, $1/(2\\kappa_p)$ is the right\nderivative at $\\lambda_{\\mathrm c,p}$ of the mass $1-m_{p,\\lambda}$ of the\nnew atom of the Parisi measure $\\mu_{p,\\lambda}$.  Since $\\lambda_{\\mathrm c,p}$ is\nthe unique point of $[\\lambda_{\\mathrm c}-\\eta,\\lambda_{\\mathrm c}+\\eta]$ at which\nthe number of RSB steps changes, $\\kappa_p$ depends only on\n$\\Xi$ and $p$, and not on the choices made in the proof.  If $p_j\\to\\infty$ through even integers and\n$\\lambda_j=\\lambda_{\\mathrm c,p_j}+\\delta_j$ with $\\delta_j>0$ and\n$\\delta_j\\to0$, then \\eqref{eq:gardner-uniform-mass-law} and\n$\\kappa_{p_j}\\to\\kappa_\\Xi$ give\n$1-m_{p_j,\\lambda_j}=\\delta_j/(2\\kappa_\\Xi)+o(\\delta_j)$.  Thus, to first\norder, the mass of the new atom grows at a rate determined by the\nunperturbed model alone.\n\\end{remark}",
+      "coverage_status": "remark_context",
+      "scope_note": "Explanatory remark, not a separately selected theorem or a claim of complete mechanization of every sentence.",
+      "related_lean_declarations": [],
+      "previous_source_id": null,
+      "current_exact_target_checked": false,
+      "prepared_revision_verified": false,
+      "proof_anchors": [],
+      "verification_scope": "Context and cited background; no standalone exact-target certification.",
+      "proved_scope_mechanically_verified": false
+    },
+    {
+      "number": "A.1",
+      "kind": "lemma",
+      "label": "lem:one-step",
+      "source_lines": {
+        "start": 1995,
+        "end": 2020
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:one-step}\nLet $a,V\\geq0$, let $g\\in\\mathcal G$ be one-Lipschitz, and write\n$T=T_{a,V}$ and $K=K_{a,V,g}$.\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n \\item We have $T(g+c)=Tg+c$ and $K_{a,V,g+c}=K$ for every constant $c$.\n Moreover, $T_{a,s}T_{a,t}=T_{a,s+t}$ for $s,t\\geq0$.\n \\item The function $Tg$ is one-Lipschitz and belongs to $\\mathcal G$, and\n \\[\n  (Tg)'(x)=\\int K(x,\\dd y)g'(y),\n  \\qquad\n  (Tg)''(x)=\\int K(x,\\dd y)g''(y)+a\\Var_{K(x,\\cdot)}(g').\n \\]\n \\item Let $w(s,\\cdot)=T_{a,V-s}g$ for $0\\leq s\\leq V$, and let $\\xi$ solve\n $\\dd\\xi_s=aw_x(s,\\xi_s)\\dd s+\\dd B_s$ with $\\xi_0=x$.  Then $\\xi_V$ has\n law $K(x,\\cdot)$.\n \\item Let $\\mathcal U=\\{h\\in\\mathcal G:\\|h'\\|_\\infty<2\\}$.  The map\n $(a,V,h)\\mapsto T_{a,V}h$ is $C^\\infty$ from $(0,\\infty)^2\\times\\mathcal U$\n into $(\\mathcal G,\\|\\cdot\\|_3)$ in the Fr\\'echet sense.  For\n $0<a_-\\leq a_+$, $0<V_-\\leq V_+$, and $M<\\infty$, its derivatives are\n bounded on $[a_-,a_+]\\times[V_-,V_+]\\times\\{h\\in\\mathcal U:\\|h\\|_3\\leq M\\}$\n by constants that depend only on $a_\\pm$, $V_\\pm$, $M$, and the order.  If\n $a=0$ or $V=0$, the map $h\\mapsto T_{a,V}h$ is linear and bounded on\n $\\mathcal G$.  In all cases, the derivative of $h\\mapsto T_{a,V}h$ at $g$\n in a direction $\\dot g\\in\\mathcal G$ is $\\int K(\\cdot,\\dd y)\\dot g(y)$.\n\\end{enumerate}\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "All four parts are assembled as expanded targets. Constants and semigroup, one-Lipschitz spatial derivative/variance formulas, actual canonical-Brownian adapted continuous SDE existence with endpoint h-transform law and pathwise uniqueness, and the Banach terminal-map regularity/derivative and printed sum-norm bounds are proved. Algebra, spatial, law and terminal-derivative clauses include a=0 and V=0; joint C\u221e and uniform higher parameter jets use positive compact a,V ranges as in the paper. The diffusion-law proof uses bounded backward Fourier tests and genuine It\u00f4 expectation rather than Girsanov.",
+      "related_lean_declarations": [
+        "Verification.AppendixACTargets.appendix_a1_i",
+        "Verification.AppendixACTargets.appendix_a1_ii",
+        "Verification.OneStepLawTargets.appendixA1DiffusionLaw_exact",
+        "Verification.AppendixACTargets.appendix_a1_iv_smooth",
+        "Verification.AppendixACTargets.appendix_a1_iv_terminal_derivative",
+        "Verification.AppendixACTargets.appendix_a1_iv_boundary",
+        "Verification.AppendixACTargets.appendix_a1_iv_sum_norm"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.AppendixACTargets.appendix_a1_i",
+        "Verification.AppendixACTargets.appendix_a1_ii",
+        "Verification.OneStepLawTargets.appendixA1DiffusionLaw_exact",
+        "Verification.AppendixACTargets.appendix_a1_iv_smooth",
+        "Verification.AppendixACTargets.appendix_a1_iv_terminal_derivative",
+        "Verification.AppendixACTargets.appendix_a1_iv_boundary",
+        "Verification.AppendixACTargets.appendix_a1_iv_sum_norm"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/AppendixACTargets.lean",
+          "sha256": "0bf9e11145c80873d7d36c3f416ea8e9642bd90b2a44826bf73f07d45c37d09c"
+        },
+        {
+          "path": "Verification/OneStepLawTargets.lean",
+          "sha256": "f4256b2213077e7f331222d2dc38750e4f9285037c2b05142c28e14a4636b533"
+        },
+        {
+          "path": "DepthPaper/RevisedAppendixAStep.lean",
+          "sha256": "54bd07b773c1b824101a4fe685b5c509719c99aad5d5e5a3b169ad5e4cc9a945"
+        },
+        {
+          "path": "DepthPaper/RevisedAppendixADiffusionLaw.lean",
+          "sha256": "eeb4bfdeea19fa575086413a5d873a12396e809450337974363b509da357ef6e"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "A.2",
+      "kind": "lemma",
+      "label": "lem:cole-hopf-smooth",
+      "source_lines": {
+        "start": 2137,
+        "end": 2167
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:cole-hopf-smooth}\nFix integers $L\\geq1$ and $\\ell\\geq0$, and constants $0<a_-\\leq a_+$,\n$0<V_-\\leq V_+$, and $C_0<\\infty$.  Let $D\\subset\\R^d$ be the compact closure of a convex open set; a\nfunction on $D$ is $C^\\ell$ if its derivatives through order $\\ell$ on the\ninterior of $D$ extend continuously to $D$.  For\n$\\theta\\in D$, let levels\n$a_i(\\theta)$ and variances $V_i(\\theta)$, $0\\leq i<L$, be $C^\\ell$, and\nlet $\\theta\\mapsto g_\\theta$ be a $C^\\ell$ map from $D$ into\n$(\\mathcal G,\\|\\cdot\\|_3)$ whose values are one-Lipschitz.  Assume that, on\n$D$ and for every multi-index $\\mathbf j$ with $|\\mathbf j|\\leq\\ell$,\n\\[\n a_-\\leq a_i\\leq a_+,\\qquad\n V_-\\leq V_i\\leq V_+,\\qquad\n |\\partial_\\theta^{\\mathbf j}a_i|+|\\partial_\\theta^{\\mathbf j}V_i|\n +\\|\\partial_\\theta^{\\mathbf j}g_\\theta\\|_3\\leq C_0.\n\\]\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n \\item Each $u_i$ is one-Lipschitz, and its mixed $\\theta$-derivatives\n through order $\\ell$ are continuous in $\\|\\cdot\\|_3$.  They are bounded\n on $D$ by a constant $C$ that depends only on $L$, $\\ell$, $d$, $a_\\pm$,\n $V_\\pm$, and $C_0$, and not on $D$.  In particular, $\\theta\\mapsto u_0(0)$ is $C^\\ell$.\n \\item Suppose that a second family of data satisfies the same\n hypotheses.  Suppose also that the two families, together with their mixed\n derivatives through order $\\ell$, differ by at most $\\varepsilon$ on $D$,\n with terminal functions compared in $\\|\\cdot\\|_3$.  Then the outputs $u_0$ and\n $\\tilde u_0$ of the two recursions satisfy\n $\\sup_D\\|\\partial_\\theta^{\\mathbf j}(u_0-\\tilde u_0)\\|_3\\leq C\\varepsilon$\n for $|\\mathbf j|\\leq\\ell$, with $C$ depending only on the quantities\n listed in~(i).\n\\end{enumerate}\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Every finite order \u2113 and recursion length L\u22651, all closed finite-dimensional parameter domains and positive compact mass/variance ranges: genuine closed C^\u2113 input jets give genuine closed C^\u2113 recursion outputs, one-Lipschitz outputs and uniform printed terminal-sum-norm bounds. Separate componentwise input differences \u2264\u03b5 give every ordered output jet difference \u2264C\u03b5 with C independent of the domain and inputs. No ambient C\u221e extension premise is imposed.",
+      "related_lean_declarations": [
+        "Verification.AppendixACTargets.appendix_a2"
+      ],
+      "previous_source_id": "depth:lemma:A.1",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.AppendixACTargets.appendix_a2"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/AppendixACTargets.lean",
+          "sha256": "0bf9e11145c80873d7d36c3f416ea8e9642bd90b2a44826bf73f07d45c37d09c"
+        },
+        {
+          "path": "DepthPaper/RevisedAppendixARecursion.lean",
+          "sha256": "f08577f5b9e1a61f7b8b95951bfeff90aa15edf920e2fbf1ed34546ae0cb2a83"
+        },
+        {
+          "path": "DepthPaper/RevisedAppendixAClosedJets.lean",
+          "sha256": "c865bbeb8110c02a23529a4dd2d394cb376143d6770af63cec2fc8b22b0b7262"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "A.3",
+      "kind": "lemma",
+      "label": "lem:observable-continuity",
+      "source_lines": {
+        "start": 2397,
+        "end": 2407
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:observable-continuity}\nLet $\\mathfrak d_n=(\\Psi_n,(q_i^n,a_i^n)_{i=0}^r,g_n)$,\n$n\\in\\mathbb N\\cup\\{\\infty\\}$, be truncated data with the same $r$ and\n$q_{\\mathrm c}$; in particular, the limiting points satisfy\n$q_0^\\infty<\\cdots<q_r^\\infty<q_{\\mathrm c}$.  If $\\Psi_n\\to\\Psi_\\infty$ in $C^3([0,q_{\\mathrm c}])$,\n$q_i^n\\to q_i^\\infty$ and $a_i^n\\to a_i^\\infty$ for every $i$, and\n$g_n^{(j)}\\to g_\\infty^{(j)}$ uniformly for $1\\leq j\\leq3$, then\n$\\Gamma^{\\mathfrak d_n}\\to\\Gamma^{\\mathfrak d_\\infty}$ and\n$\\Gamma_2^{\\mathfrak d_n}\\to\\Gamma_2^{\\mathfrak d_\\infty}$ uniformly, and\n$f^{\\mathfrak d_n}\\to f^{\\mathfrak d_\\infty}$ in $C^2([0,q_{\\mathrm c}])$.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "For genuine truncated data with fixed depth and cutoff, varying covariance C\u00b3 jets, atom locations, possibly zero/coincident levels and terminal derivatives 1\u20133: actual \u0393 and \u0393\u2082 converge uniformly, all intrinsic first-variation jets 0\u20132 converge uniformly on the closed interval, and each first variation is C\u00b2. Terminal constants need not converge.",
+      "related_lean_declarations": [
+        "Verification.AppendixACTargets.appendix_a3"
+      ],
+      "previous_source_id": "depth:lemma:A.2",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.AppendixACTargets.appendix_a3"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/AppendixACTargets.lean",
+          "sha256": "0bf9e11145c80873d7d36c3f416ea8e9642bd90b2a44826bf73f07d45c37d09c"
+        },
+        {
+          "path": "DepthPaper/RevisedAppendixAContinuity.lean",
+          "sha256": "8106abc1620370e7a40ec2377f5352f1fe25ef4185a1472ebebe32ce456adde4"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "A.4",
+      "kind": "lemma",
+      "label": "lem:contact-persistence",
+      "source_lines": {
+        "start": 2540,
+        "end": 2556
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:contact-persistence}\nLet $\\mathfrak d_n$, $n\\in\\mathbb N\\cup\\{\\infty\\}$, be truncated data\nsatisfying the hypotheses of \\zcref{lem:observable-continuity}, and write\n$f_n=f^{\\mathfrak d_n}$.  Assume that:\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n \\item $f_\\infty\\leq0$ on $[0,q_{\\mathrm c}]$,\n $\\{f_\\infty=0\\}=\\{q_0^\\infty,\\ldots,q_r^\\infty\\}$, and $f_\\infty''(q_i^\\infty)<0$ for\n $1\\leq i\\leq r$;\n \\item there exists $\\varepsilon>0$ such that\n $\\Gamma^{\\mathfrak d_n}(q)\\leq(1-\\varepsilon)q$ for $0\\leq q\\leq\\varepsilon$ and\n all large $n$;\n \\item $f_n(q_i^n)=f_n'(q_i^n)=0$ for $1\\leq i\\leq r$ and all large $n$.\n\\end{enumerate}\nThen, for all large $n$, $f_n\\leq0$ on $[0,q_{\\mathrm c}]$,\n$\\{f_n=0\\}=\\{q_0^n,\\ldots,q_r^n\\}$, and $f_n''(q_i^n)<0$ for\n$1\\leq i\\leq r$.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Exact closed-interval eventual contact persistence under the printed limiting sign/contact/curvature, origin margin and stationary moving-contact hypotheses. The origin margin and contact equations need hold only eventually. Covariance positivity away from zero is part of truncated source data. This analytic lemma does not alone instantiate a global Parisi minimizer; Section 2.7 discharges that use.",
+      "related_lean_declarations": [
+        "Verification.AppendixACTargets.appendix_a4"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.AppendixACTargets.appendix_a4"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/AppendixACTargets.lean",
+          "sha256": "0bf9e11145c80873d7d36c3f416ea8e9642bd90b2a44826bf73f07d45c37d09c"
+        },
+        {
+          "path": "DepthPaper/RevisedAppendixAContinuity.lean",
+          "sha256": "8106abc1620370e7a40ec2377f5352f1fe25ef4185a1472ebebe32ce456adde4"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "A.5",
+      "kind": "remark",
+      "label": "rem:origin-condition",
+      "source_lines": {
+        "start": 2578,
+        "end": 2586
+      },
+      "statement_tex": "\\begin{remark}\\label{rem:origin-condition}\nCondition~(ii) of \\zcref{lem:contact-persistence} holds, in particular, if\nthere exist an admissible covariance $\\Xi_n$ with\n$\\Xi_n''\\leq1-\\varepsilon$ on $[0,\\varepsilon]$ and an atomic measure $\\mu_n$\nsuch that $\\Gamma^{\\mathfrak d_n}=\\Gamma_{\\Xi_n,\\mu_n}$ on $[0,\\varepsilon]$.\nIndeed, by \\eqref{eq:Gamma-curvature}, we then have\n$\\Gamma^{\\mathfrak d_n}(q)\\leq\\Xi_n'(q)=\\int_0^q\\Xi_n''\\leq(1-\\varepsilon)q$\nfor $0\\leq q\\leq\\varepsilon$.\n\\end{remark}",
+      "coverage_status": "remark_context",
+      "scope_note": "Explanatory remark, not a separately selected theorem or a claim of complete mechanization of every sentence.",
+      "related_lean_declarations": [],
+      "previous_source_id": null,
+      "current_exact_target_checked": false,
+      "prepared_revision_verified": false,
+      "proof_anchors": [],
+      "verification_scope": "Context and cited background; no standalone exact-target certification.",
+      "proved_scope_mechanically_verified": false
+    },
+    {
+      "number": "A.6",
+      "kind": "lemma",
+      "label": "lem:sharp-first-variation",
+      "source_lines": {
+        "start": 2635,
+        "end": 2645
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:sharp-first-variation}\nLet $\\Xi$ be admissible, let $\\mu,\\nu\\in\\M$ be atomic, let $X$ be the\noptimal diffusion of $\\mu$, and set\n$I=\\int_0^1\\Xi''(q)(\\alpha_\\nu-\\alpha_\\mu)(q)u_{\\mu,x}(q,X_q)\\dd q$.  Then\n\\begin{equation}\\label{eq:sharp-first-variation}\n \\Pp_\\Xi(\\nu)-\\Pp_\\Xi(\\mu)\n \\geq-\\int_0^1f_{\\Xi,\\mu}\\dd(\\nu-\\mu)\n +\\E\\bigl[\\log\\cosh(X_1+I)-\\log\\cosh X_1-\\tanh(X_1)I\\bigr],\n\\end{equation}\nand the expectation on the right is nonnegative.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "For all genuine probability measures \u03bc,\u03bd, hence stronger than atomic source scope: the literal original-overlap-clock drift I and log-cosh Taylor remainder give the sharpened first-variation inequality. The remainder is integrable and its expectation nonnegative. No supplied minimizer, control injectivity or Hessian premise.",
+      "related_lean_declarations": [
+        "Verification.RevisedTargets.sharpFirstVariation_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "checked_modules": [
+        {
+          "file": "DepthPaper/RevisedSharpFirstVariation.lean",
+          "sha256": "959330143cc54cd6c0db4868d783d065afdd7b6c40e7da0eb009f9c3dc75afca"
+        }
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "proof_anchors": [
+        "Verification.RevisedTargets.sharpFirstVariation_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/RevisedTargets.lean",
+          "sha256": "3087169820341c4a1960ce4e50a3f2ed746469f3e6027d4539ec2d3a38819499"
+        },
+        {
+          "path": "DepthPaper/RevisedSharpFirstVariation.lean",
+          "sha256": "959330143cc54cd6c0db4868d783d065afdd7b6c40e7da0eb009f9c3dc75afca"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "A.7",
+      "kind": "lemma",
+      "label": "lem:temperature-mass-diffusion",
+      "source_lines": {
+        "start": 2815,
+        "end": 2826
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:temperature-mass-diffusion}\nIn the setting of \\zcref{lem:temperature-mass-scaling}, let $Y$ be the\noptimal diffusion of $(m^2\\Xi,\\nu)$, and let\n$X^\\circ=X^{\\mathfrak d^\\circ_{\\nu,m}}$ be driven by the same Brownian\nmotion.  Then $X^\\circ=m^{-1}Y$ on $[0,q_{\\mathrm c}]$, and\n\\begin{equation}\\label{eq:temperature-mass-Gamma-f}\n \\Gamma^{\\mathfrak d^\\circ_{\\nu,m}}=\\Gamma_{m^2\\Xi,\\nu},\n \\qquad\n f^{\\mathfrak d^\\circ_{\\nu,m}}=\\frac1{m^2}f_{m^2\\Xi,\\nu}\n \\qquad\\text{on }[0,q_{\\mathrm c}].\n\\end{equation}\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Every finite-support probability \u03bd strictly below qc, including measures without an origin atom, 0<m\u22641 and 0<qc\u22641: independently constructed lower and temperature-scaled states driven by the same original normalized covariance-clock Brownian noise satisfy the pointwise scaling on the whole closed interval for every sample. Actual \u0393 and f have the exact m\u00b2 scaling. Finite CDF partitions and valid data are constructed, not supplied as hypotheses. The separate complete physical-time Brownian target for Lemma 2.2 is in Verification.PhysicalStochasticTargets.",
+      "related_lean_declarations": [
+        "Verification.AppendixACTargets.appendix_a7"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.AppendixACTargets.appendix_a7"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/AppendixACTargets.lean",
+          "sha256": "0bf9e11145c80873d7d36c3f416ea8e9642bd90b2a44826bf73f07d45c37d09c"
+        },
+        {
+          "path": "DepthPaper/RevisedAppendixATemperatureDiffusion.lean",
+          "sha256": "e0e6d0f5dc92cbba9c14c1eebd8a1674f371721f4ed304bb630dc6c0c4add8af"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "A.8",
+      "kind": "remark",
+      "label": "rem:psi-regularity",
+      "source_lines": {
+        "start": 2851,
+        "end": 2868
+      },
+      "statement_tex": "\\begin{remark}\\label{rem:psi-regularity}\nEach $\\psi_m$ is one-Lipschitz with $\\psi_m(0)=0$, and for every compact\ninterval $I\\subset(0,\\infty)$ and all integers $k\\geq0$ and $j\\geq1$,\n$\\sup_{m\\in I,\\,x\\in\\R}|\\partial_m^k\\partial_x^j\\psi_m(x)|<\\infty$.  Indeed,\n$\\partial_x\\psi_m(x)=\\tanh(mx)$, and for $j\\geq1$ the derivative\n$\\partial_m^k\\partial_x^j\\psi_m$ is a finite sum of terms\n$x^im^{i'}\\tanh^{(n)}(mx)$ with $n\\geq1$ whenever $i\\geq1$; since\n$\\tanh^{(n)}$ decays exponentially for $n\\geq1$, these terms are bounded\nuniformly for $m\\in I$ and $x\\in\\R$.  Since also $\\partial_m^k\\psi_m(0)=0$,\nthe functions $\\partial_m^k\\psi_m$ are bounded in $\\|\\cdot\\|_3$ uniformly for\n$m\\in I$, and they belong to $\\mathcal G$ because their fourth\n$x$-derivatives are bounded.  By Taylor's theorem in $m$, applied to each\n$\\partial_m^k\\partial_x^j\\psi_m(x)$, we have\n$\\|\\partial_m^k\\psi_{m+\\delta}-\\partial_m^k\\psi_m-\\delta\\partial_m^{k+1}\\psi_m\\|_3\n\\leq\\delta^2\\sup_{m'\\in I}\\|\\partial_m^{k+2}\\psi_{m'}\\|_3$ whenever\n$m,m+\\delta\\in I$.  Hence $m\\mapsto\\psi_m$ is $C^\\infty$ from $I$ into\n$(\\mathcal G,\\|\\cdot\\|_3)$, with derivatives $\\partial_m^k\\psi_m$.\n\\end{remark}",
+      "coverage_status": "remark_context",
+      "scope_note": "Explanatory remark, not a separately selected theorem or a claim of complete mechanization of every sentence. All-positive mixed bounds are proved in supporting sources; the current Banach smoothness API is proved on mass (0,2), so the entire remark is retained as context rather than marked as a full theorem.",
+      "related_lean_declarations": [],
+      "previous_source_id": null,
+      "current_exact_target_checked": false,
+      "prepared_revision_verified": false,
+      "proof_anchors": [],
+      "verification_scope": "Context and cited background; no standalone exact-target certification.",
+      "proved_scope_mechanically_verified": false
+    },
+    {
+      "number": "B.1",
+      "kind": "lemma",
+      "label": "lem:cutoff-splitting",
+      "source_lines": {
+        "start": 2980,
+        "end": 3000
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:cutoff-splitting}\nFor every sufficiently large even $p$ and every\n$(\\theta,Q)\\in\\Theta\\times S_p$, the Parisi solution $u_p$ of\n$\\mu_{z,m,Q}$ for $\\Psi$ satisfies $u_p(\\bar q,\\cdot)=k_p+\\psi^{(p)}_m$,\nwhere $k_p=k_p(\\lambda,m,Q)$ does not depend on $x$ (see the proof) and\n\\[\n \\psi^{(p)}_m=T_{m,W_p}\\log\\cosh-\\frac{mW_p}{2}-\\Bigl(\\frac1m-1\\Bigr)\\log2.\n\\]\nThe dependence of $\\psi^{(p)}_m$ on $(\\lambda,Q)$ is through $W_p$.\nIt is one-Lipschitz and belongs to $\\mathcal G$ by\n\\zcref{lem:one-step}(ii).\nThe map $(\\lambda,m,Q)\\mapsto\\psi^{(p)}_m$ has parameter derivatives through\norder four that are continuous in $\\|\\cdot\\|_3$, and\n\\begin{equation}\\label{eq:lower-terminal-approximation}\n \\max_{|\\mathbf j|\\leq4}\n \\bigl\\|\n \\partial_{\\lambda,m,Q}^{\\mathbf j}(\\psi^{(p)}_m-\\psi_m)\n \\bigr\\|_3\n \\leq Cp^Ae^{-cp}.\n\\end{equation}\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Any positive compact mass/coupling window and endpoint strip, all sufficiently large even degrees automatically outside finite support. Actual terminal element has printed Cole\u2013Hopf\u2212mW/2\u2212(1/m\u22121)log2 values, is 1-Lipschitz and lies in complete compatible TerminalSpace. All parameter ordered partials through order 4 bounded in exact terminalSumNorm (value at zero + three derivative sup norms). Parameter map C\u221e into that Banach space. Actual potential at qc equals printed k+terminal element.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_cutoff_splitting",
+        "GeneralDepthPaper.revised_cutoff_terminal_lipschitz",
+        "Verification.SectionFourTargets.cutoffSplitting_exact"
+      ],
+      "previous_source_id": "depth:lemma:4.1",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.cutoffSplitting_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedAppendixBSplitting.lean",
+          "sha256": "73c169101d94cba8e34503cae2db7919540576beb141495e466a9e209a19a397"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "B.2",
+      "kind": "lemma",
+      "label": "lem:below-cutoff",
+      "source_lines": {
+        "start": 3038,
+        "end": 3064
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:below-cutoff}\nFor every sufficiently large even $p$ and every\n$(\\theta,Q)\\in\\Theta\\times S_p$, let $q_0<\\cdots<q_r$ be the atoms of\n$\\nu_z$, let $G_\\theta=(q_i,m\\alpha_{\\nu_z}(q_i))_{i=0}^r$ record\nthese atoms and the corresponding cumulative masses of $m\\nu_z$,\nand consider the truncated data with cutoff $\\bar q$\n\\[\n \\mathfrak d_p(\\theta,Q)=\\bigl(\\Psi,G_\\theta,\\psi^{(p)}_m\\bigr),\n \\qquad\n \\mathfrak d^\\Psi_\\theta=\\bigl(\\Psi,G_\\theta,\\psi_m\\bigr),\n \\qquad\n \\mathfrak d^\\circ_\\theta=\\bigl(\\Xi,G_\\theta,\\psi_m\\bigr).\n\\]\nThe first two differ only in their terminal functions, and the last two\nonly in their covariances.\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n \\item On $[0,\\bar q]$, the Parisi solution of $\\mu_{z,m,Q}$ for $\\Psi$ is\n $k_p+u^{\\mathfrak d_p(\\theta,Q)}$, its optimal diffusion is\n $X^{\\mathfrak d_p(\\theta,Q)}$, and\n $f_{\\Psi,\\mu_{z,m,Q}}=f^{\\mathfrak d_p(\\theta,Q)}$.\n \\item $u^{\\mathfrak d^\\Psi_\\theta}(0,0)\n =\\frac1mu_{m^2\\Psi,\\nu_z}(0,0)-\\frac m2\\bigl(\\Psi'(1)-\\Psi'(\\bar q)\\bigr)$.\n \\item $f^{\\mathfrak d^\\circ_\\theta}=m^{-2}f_{m^2\\Xi,\\nu_z}$ on\n $[0,\\bar q]$; in particular, $f^\\circ_m=f^{\\mathfrak d^\\circ_\\theta}$ on\n $[0,\\bar q]$ when $z=z(m)$.\n\\end{enumerate}\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Any two finite covariances \u03a8,\u039e, valid lower chart, 0<m\u22641 and qc<Q. Three actual truncated problems: potential equality below cutoff, genuine first variation equality, temperature-scaled potential and base first-variation formulas with exact factors. State paths have the same full path law; additionally the exact pathwise identity specifies the rescaled Brownian noise realizing the original covariance clock. Original development normalizes Brownian time, so no unsupported identity between two independently selected raw canonical noise paths is asserted.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_below_cutoff",
+        "Verification.SectionFourTargets.belowCutoff_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.belowCutoff_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedAppendixBData.lean",
+          "sha256": "dcc0b34c0b14db2699212514cfc7ec415e0c6d7b19553d0adf4456e9040280db"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "B.3",
+      "kind": "lemma",
+      "label": "lem:deficit-representation",
+      "source_lines": {
+        "start": 3088,
+        "end": 3100
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:deficit-representation}\nFor every sufficiently large even $p$ and every\n$(\\theta,Q)\\in\\Theta\\times S_p$, let $X$ and $\\Gamma$ be the optimal\ndiffusion and the mean squared magnetization of\n$\\mu_{z,m,Q}$ for $\\Psi$, and let $v_t=T_{m,W_p-t}\\log\\cosh$ for\n$0\\leq t\\leq W_p$.  For $\\bar q<q\\leq Q$, set\n$t=\\Psi'(q)-\\Psi'(\\bar q)$.  Then, conditionally on $X_{\\bar q}=x$, the law\nof $X_q$ is $K_{m,t,v_t}(x,\\cdot)$, and\n\\begin{equation}\\label{eq:deficit-representation}\n 1-\\Gamma(q)=\\E\\bigl[1-v_t'(X_q)^2\\bigr].\n\\end{equation}\nAt $q=Q$, we have $t=W_p$ and $v_{W_p}'=\\tanh$, so $1-\\Gamma(Q)=\\E\\sech^2(X_Q)$.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "For qc<q\u2264Q, exact genuine selected-state conditional transition is specified against every event in canonical Brownian filtration at qc; this implies the stated conditional state law and is stronger than marginal equality. Kernel is an actual measurable Markov kernel with printed finite-horizon Gaussian h-transform density at positive elapsed variance. For every q\u2208[qc,Q], actual deficit expectation; at Q exact sech\u00b2 expectation. Parameter m\u2208[0,1] for conditional/expectation claims; density law holds for all real m.",
+      "related_lean_declarations": [
+        "GeneralDepthPaper.revised_cutoff_conditional_law",
+        "GeneralDepthPaper.revisedCutoffKernel_density",
+        "GeneralDepthPaper.revised_cutoff_deficit_expectation",
+        "GeneralDepthPaper.revised_cutoff_endpoint_expectation",
+        "Verification.SectionFourTargets.conditionalKernel_exact",
+        "Verification.SectionFourTargets.conditionalKernelDensity_exact",
+        "Verification.SectionFourTargets.deficitExpectation_exact",
+        "Verification.SectionFourTargets.endpointExpectation_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.SectionFourTargets.conditionalKernel_exact",
+        "Verification.SectionFourTargets.conditionalKernelDensity_exact",
+        "Verification.SectionFourTargets.deficitExpectation_exact",
+        "Verification.SectionFourTargets.endpointExpectation_exact"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/SectionFourTargets.lean",
+          "sha256": "8797f5dc11d29ed91ce246a6fcc79b563053622057fa8284ff433a9059aa5c95"
+        },
+        {
+          "path": "GeneralDepthPaper/RevisedAppendixBData.lean",
+          "sha256": "dcc0b34c0b14db2699212514cfc7ec415e0c6d7b19553d0adf4456e9040280db"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "B.4",
+      "kind": "lemma",
+      "label": "lem:ift-closed",
+      "source_lines": {
+        "start": 3362,
+        "end": 3370
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:ift-closed}\nLet $D\\subset\\R^d$ and $K\\subset\\R^n$ be the compact closures of convex\nopen sets, let $k\\geq1$, and let $\\Phi\\colon D\\times K\\to\\R^n$ be $C^k$.\nSuppose that, for every $\\theta\\in D$, the equation $\\Phi(\\theta,y)=0$ has\nexactly one solution $y=y(\\theta)$ in $K$, that this solution lies in the\ninterior of $K$, and that $D_y\\Phi(\\theta,y(\\theta))$ is invertible.  Then\n$y$ is $C^k$ on $D$, and its derivatives are obtained by differentiating\nthe identity $\\Phi(\\theta,y(\\theta))=0$.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "All finite k\u22651 and Euclidean dimensions d,n\u22650, compact closures of convex open parameter/solution sets, genuine paper closed-interior C^k jets, unique roots in the solution closure lying in its interior, and invertibility of the actual solution partial derivative. The root is C^k on the closed parameter domain, with the exact derivative \u2212A\u207b\u00b9B and every composed zero-identity jet. An existence formulation constructs the root from \u2203!; no extension or root-regularity premise is assumed. The proof uses relative differentiation and smooth inversion, not Whitney extension; empty parameter domains and zero dimensions are covered.",
+      "related_lean_declarations": [
+        "Verification.ClosedDomainTargets.lemmaB4_exact",
+        "DepthPaper.RevisedClosedIFT.exists_closed_domain_implicit_function"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.ClosedDomainTargets.lemmaB4_exact",
+        "DepthPaper.RevisedClosedIFT.exists_closed_domain_implicit_function"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/ClosedDomainTargets.lean",
+          "sha256": "96beac7bb0a5c52ea1fcc968dabeef4879c5f7c89dabe9cb069a39a0be5ab256"
+        },
+        {
+          "path": "DepthPaper/RevisedClosedDomainIFT.lean",
+          "sha256": "9d1ff1a2cabfbbd095ae4715943e54a48c105be249b20f0378b37d5e8072962a"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "C.1",
+      "kind": "lemma",
+      "label": "lem:large-V",
+      "source_lines": {
+        "start": 3625,
+        "end": 3646
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:large-V}\nLet $I\\subset(0,1]$ be compact, and let $c=\\frac12(\\min I)^2$.  There\nexists $\\overline V\\geq1$, depending only on $I$, with the following\nproperty.  For every integer $\\ell\\geq0$, there exists $C_\\ell<\\infty$,\ndepending only on\n$I$ and $\\ell$, such that, for all $m\\in I$, $V\\geq\\overline V$, and\n$x\\in\\R$,\n\\begin{equation}\\label{eq:large-V}\n (T_{m,V}\\log\\cosh)(x)\n =\\frac{mV}{2}+\\left(\\frac1m-1\\right)\\log2\n +\\frac1m\\log\\cosh(mx)+\\mathcal E_{m,V}(x),\n\\end{equation}\nwhere\n\\begin{equation}\\label{eq:large-V-error}\n \\max_{i+j+k\\leq\\ell}\\sup_{x\\in\\R}\n \\left|\n \\partial_x^i\\partial_m^j\\partial_V^k\n \\mathcal E_{m,V}(x)\n \\right|\n \\leq C_\\ell V^\\ell e^{-cV}.\n\\end{equation}\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Exact actual Cole\u2013Hopf expansion and literal variance-then-mass-then-space mixed derivatives, total order\u2264\u2113, uniformly over all real x and m in any nonempty compact I\u2286(0,1]: C_\u2113 V^\u2113 exp(\u2212((min I)\u00b2/2)V). I.Nonempty makes the printed minimum meaningful. V\u0304=1 and intermediate polynomial degree\u2264the number of mass derivatives strengthen the claim.",
+      "related_lean_declarations": [
+        "Verification.RevisedTargets.largeVariance_exact"
+      ],
+      "previous_source_id": "depth:lemma:B.1",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "checked_modules": [
+        {
+          "file": "DepthPaper/RevisedLargeVarianceDegrees.lean",
+          "sha256": "f2a83b9a6c74bad950bea981ccc2b36c391a76419446c20d2649503cb5cd537b"
+        },
+        {
+          "file": "DepthPaper/RevisedLargeVarianceLogBounds.lean",
+          "sha256": "57c55ec14e551193cb413c902f321438e4fd45c7449a91bf4ef24e88605f0120"
+        },
+        {
+          "file": "DepthPaper/RevisedLargeVarianceSharp.lean",
+          "sha256": "8516c98e4d7edef75383a97c68c8e6d0b0efc974f4506cdb71283fd9fb62747b"
+        }
+      ],
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "proof_anchors": [
+        "Verification.RevisedTargets.largeVariance_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/RevisedTargets.lean",
+          "sha256": "3087169820341c4a1960ce4e50a3f2ed746469f3e6027d4539ec2d3a38819499"
+        },
+        {
+          "path": "DepthPaper/RevisedLargeVarianceSharp.lean",
+          "sha256": "8516c98e4d7edef75383a97c68c8e6d0b0efc974f4506cdb71283fd9fb62747b"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "C.2",
+      "kind": "lemma",
+      "label": "lem:tanh-comparison",
+      "source_lines": {
+        "start": 3713,
+        "end": 3717
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:tanh-comparison}\nLet $0<m\\leq1$ and $V\\geq0$, and let $v=T_{m,V}\\log\\cosh$.  Then\n$|v'(y)|\\geq\\tanh(m|y|)$ for all $y\\in\\R$; in particular,\n$1-v'(y)^2\\leq\\sech^2(my)$.\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Every 0<m\u22641, V\u22650 and x\u2208\u211d, including V=0: the actual Cole\u2013Hopf gradient satisfies the literal tanh absolute-value lower bound and squared-sech deficit upper bound. Gaussian reflection and bounded conditional-sign association replace the paper differentiation of an unbounded covariance, without extra assumptions.",
+      "related_lean_declarations": [
+        "Verification.RevisedTargets.tanhComparison_exact",
+        "Verification.RevisedTargets.sechComparison_exact"
+      ],
+      "previous_source_id": null,
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "checked_modules": [
+        {
+          "file": "DepthPaper/RevisedDoobComparison.lean",
+          "sha256": "00c2edabbf6656c09ca9ec2a34dee5185a7f7ba996a22e74cca2ef7fb0f87050"
+        }
+      ],
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "proof_anchors": [
+        "Verification.RevisedTargets.tanhComparison_exact",
+        "Verification.RevisedTargets.sechComparison_exact"
+      ],
+      "proof_source_modules": [
+        {
+          "path": "Verification/RevisedTargets.lean",
+          "sha256": "3087169820341c4a1960ce4e50a3f2ed746469f3e6027d4539ec2d3a38819499"
+        },
+        {
+          "path": "DepthPaper/RevisedDoobComparison.lean",
+          "sha256": "00c2edabbf6656c09ca9ec2a34dee5185a7f7ba996a22e74cca2ef7fb0f87050"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    },
+    {
+      "number": "C.3",
+      "kind": "lemma",
+      "label": "lem:doob-kernel",
+      "source_lines": {
+        "start": 3768,
+        "end": 3785
+      },
+      "statement_tex": "\\begin{lemma}\\label{lem:doob-kernel}\nLet $0<m\\leq1$ and $W>0$, and set $v_t=T_{m,W-t}\\log\\cosh$ for\n$0\\leq t\\leq W$.  For $t\\in(0,W]$ and $x\\in\\R$,\n\\begin{equation}\\label{eq:exact-Doob}\n K_{m,t,v_t}(x,\\dd y)\n =\\mathsf p_t(x,y)\\,\\frac{e^{mv_t(y)}}{e^{mv_0(x)}}\\dd y.\n\\end{equation}\nLet\n\\begin{equation}\\label{eq:Kinfty-mixture}\n K^\\infty_t(x,\\dd y)\n =\\mathsf p_t(x,y)\\,e^{-m^2t/2}\\,\\frac{\\cosh(my)}{\\cosh(mx)}\\dd y\n =\\frac{e^{mx}\\mathsf p_t(x+mt,y)+e^{-mx}\\mathsf p_t(x-mt,y)}{2\\cosh(mx)}\\dd y.\n\\end{equation}\nThen, for $t\\in(0,W]$ and $x\\in\\R$,\n\\begin{equation}\\label{eq:Doob-comparison}\n \\frac14K^\\infty_t(x,\\cdot)\\leq K_{m,t,v_t}(x,\\cdot)\\leq4K^\\infty_t(x,\\cdot).\n\\end{equation}\n\\end{lemma}",
+      "coverage_status": "exact_target_compiled",
+      "scope_note": "Every 0<m\u22641, W>0, 0<t\u2264W and x\u2208\u211d: actual measurable constant-mass kernel has the printed normalized finite-horizon h-transform density; the limiting density is exactly the moving two-Gaussian mixture. Both are probabilities and the one-quarter/four comparison holds.",
+      "related_lean_declarations": [
+        "Verification.AppendixACTargets.appendix_c3"
+      ],
+      "previous_source_id": "depth:lemma:B.2",
+      "current_exact_target_checked": true,
+      "prepared_revision_verified": true,
+      "proof_anchors": [
+        "Verification.AppendixACTargets.appendix_c3"
+      ],
+      "verification_scope": "The complete documented numbered target and listed anchors were built and transitively axiom-audited at the identified proof-source revision. All public Verification declarations and their dependency closures passed Lean, NanoDa and con-ron. Scope qualifications and alternative proof routes remain explicit.",
+      "proof_source_modules": [
+        {
+          "path": "Verification/AppendixACTargets.lean",
+          "sha256": "0bf9e11145c80873d7d36c3f416ea8e9642bd90b2a44826bf73f07d45c37d09c"
+        },
+        {
+          "path": "DepthPaper/RevisedDoobKernel.lean",
+          "sha256": "3e45df9947d853da5d3d7edca84021d6ceb1a786ee4080b3aa711f9370d8662d"
+        }
+      ],
+      "proof_source_hash_scope": "Hashes identify the listed statement/proof-anchor modules only; they do not identify the full transitive closure or certify a full repository build.",
+      "remaining_clauses": [],
+      "proved_scope_mechanically_verified": true,
+      "checked_proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b"
+    }
+  ],
+  "verification": {
+    "revision_scope": "Immutable Lean proof sources and pinned build/comparison inputs; final public documentation records this exact identity.",
+    "proof_source_sha256": "9792fcb5d961164fe66a9e472e0de063a1378f48a75b957d56601394c7bb8d7b",
+    "lean_version": "Lean (version 4.35.0-rc2, x86_64-unknown-linux-gnu, commit 11acb17ec6b07a8f9e9173e6845197929540936b, Release)",
+    "full_build": {
+      "status": "passed",
+      "submitted_lean_sources": 1931
+    },
+    "transitive_axiom_audit": {
+      "status": "passed",
+      "distinct_named_declarations": 5711,
+      "allowed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "exact_type_checks": {
+      "status": "passed",
+      "retained_expanded_check_count": 7,
+      "public_Verification_declarations": 68,
+      "scope": "Every numbered non-remark target has an explicitly checked complete or stronger faithful statement. Older narrow targets and conditional infrastructure retain their actual hypotheses; counts alone are not mathematical fidelity evidence."
+    },
+    "selected_interface": {
+      "targets": [
+        "Theorem 1.1",
+        "Theorem 1.2"
+      ],
+      "theorem_names": [
+        "ArbitraryRSB.arbitrary_finite_depth_open_set",
+        "ArbitraryRSB.universal_gardner_transition"
+      ],
+      "solution_module": "Solution",
+      "challenge_module": "Challenge",
+      "status": "passed",
+      "comparator_statement_comparison": "passed",
+      "required_kernel_replay": {
+        "Lean": "passed",
+        "NanoDa": "passed",
+        "con-ron": "passed"
+      },
+      "comparator_log_sha256": "d317f4569acebbf185ef4bfc806542695eba0c7df543497c7e89c113bacf9147",
+      "scope": "Bundled Comparator comparison against the independent Challenge statements and replay of the selected proof closures with Lean, NanoDa and con-ron."
+    },
+    "expanded_target_modules": [
+      "Verification.AppendixACTargets",
+      "Verification.ClosedDomainTargets",
+      "Verification.NumberedTargets",
+      "Verification.OneStepLawTargets",
+      "Verification.OptimizedValueTargets",
+      "Verification.PhysicalStochasticTargets",
+      "Verification.RevisedTargets",
+      "Verification.SectionFourTargets",
+      "Verification.SectionTwoTargets",
+      "Verification.StochasticTargets"
+    ],
+    "expanded_target_kernel_replay": {
+      "status": "passed",
+      "selected_declarations": 68,
+      "kernels": {
+        "Lean": "passed",
+        "NanoDa": "passed",
+        "con-ron": "passed"
+      },
+      "export_sha256": "e421a5ccde7024dfea79cff70def796ab2f78c652768ef581ec50841ce1116e7",
+      "log_sha256": {
+        "Lean": {
+          "sha256": "b4a5a2119e1d34b46527d63317f417c74261b65eeb93f14026389da2519c2ead"
+        },
+        "NanoDa": {
+          "sha256": "8418b7eb3288ce9d8f670ead23b5d08386e0a610b31f39eb2f37f51e5f117849"
+        },
+        "con-ron": {
+          "sha256": "91b5e978640017785fbe55a7c79db98841b58e2af1d78d154bbfae7d12497372"
+        }
+      },
+      "independent_challenge_comparison": false,
+      "scope": "All public Verification declarations and their exported dependencies, including the literal physical-time Lemma 2.2. Conditional infrastructure retains its stated hypotheses."
+    },
+    "warnings": [],
+    "evidence_report_sha256": {
+      "full_source_audit": "2dadd73015c481755217bc1593bcaec87cf6df9b6a007fb89fa8a3202d025b73",
+      "expanded_kernel_replay": "383e6e9d6b35cfec3757ebbb5b6815c36399076a286fc5f6dfd06ac1be128803"
+    },
+    "mathematical_coverage_complete": false,
+    "historical_checks": "Earlier reports belong to their own source snapshots and are not used to certify this revision.",
+    "public_verification_record": "VERIFICATION.md",
+    "numbered_nonremark_coverage_complete": true
+  },
+  "verification_flags_meaning": "current_exact_target_checked records elaboration of the complete numbered mathematical target or a stronger faithful target. prepared_revision_verified and proved_scope_mechanically_verified record actual evidence at checked_proof_source_sha256. All 41 non-remark numbered targets are complete; the four contextual remarks are not separate certified targets. No flag implies human mathematical review or complete formalization of every paper sentence.",
+  "coverage_counts": {
+    "numbered_entries": 45,
+    "nonremark_entries": 41,
+    "complete_numbered_mathematical_targets": 41,
+    "partial_numbered_mathematical_targets": 0,
+    "contextual_remarks": 4
+  }
+}

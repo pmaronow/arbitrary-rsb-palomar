@@ -1,0 +1,13 @@
+.lake/
+__pycache__/
+*.pyc
+.venv/
+*.olean
+*.ilean
+*.trace
+*.hash
+*.log
+*.tar.gz
+*.zip
+verification-output/
+

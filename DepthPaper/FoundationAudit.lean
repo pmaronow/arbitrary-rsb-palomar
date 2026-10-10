@@ -1,0 +1,29 @@
+module
+
+public import DepthPaper.Nondegeneracy
+public import DepthPaper.GaussianTiltedOperator
+public import DepthPaper.ColeHopfCentered
+
+@[expose] public section
+
+#print axioms DepthPaper.Gamma_le_first
+#print axioms DepthPaper.firstVariation_neg_near_origin
+#print axioms DepthPaper.isParisiMinimizer_of_nonpos_full_zero_mass
+#print axioms DepthPaper.contact_perturbation_closed_C2
+#print axioms DepthPaper.contDiffOn_firstVariation_two
+#print axioms DepthPaper.quarticSeed_nondegenerate
+#print axioms DepthPaper.parisiCDF_atomicMeasure
+#print axioms DepthPaper.support_atomicMeasure
+
+
+#print axioms DepthPaper.existsUnique_parisiMinimizer
+#print axioms DepthPaper.contDiff_coleHopf_mass
+#print axioms DepthPaper.deriv_coleHopf_mass_zero
+#print axioms DepthPaper.coleHopf_centered_integral
+#print axioms DepthPaper.analyticAt_laplace_integral
+#print axioms DepthPaper.isClosed_terminalJetSubmodule
+#print axioms DepthPaper.analyticAt_boundedExpKernel
+#print axioms DepthPaper.analyticAt_weightedTerminalKernel
+#print axioms DepthPaper.analyticAt_centeredGaussianNormalizer
+#print axioms DepthPaper.isUnit_centeredGaussianNormalizer
+#print axioms DepthPaper.analyticAt_tiltedGaussianOperator

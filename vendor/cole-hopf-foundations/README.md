@@ -1,0 +1,7 @@
+# Cole–Hopf and Gaussian heat foundations
+
+These 15 modules come from [or4nge19/SpinGlass](https://github.com/or4nge19/SpinGlass), revision `dc1d3820af6e443c09bd1177ec3e409cf0640d5c`. Original Apache 2.0 [license](LICENSE), copyright notices, and author notices are retained. Source files identify Matteo Cipollina as an author. [PROVENANCE.json](PROVENANCE.json) records upstream and historical adaptation hashes.
+
+The supplied adaptation nests declarations in `ColeHopfFoundation` to avoid collisions with independently sourced Gaussian lemmas. Inner namespaces and mathematical statements are preserved. The modules provide Gaussian heat and one-level Cole–Hopf calculus, including spatial derivatives, the PDE, Lipschitz preservation, and supremum-norm contraction. Arbitrary-measure Parisi PDE construction and variational identification belong to the enclosing development.
+
+The supplied provenance reports successful compilation and a standard-axiom audit on Lean 4.34.1 with mathlib `d13f23b723b8a846827a245b89c10fc7d3f11612`. That is historical evidence about the earlier adapted sources. The historical standalone audit and its raw log are excluded from this dependency slice. Current module/compiler compatibility changes make the historical adapted hashes different from current source hashes. The enclosing [verification record](../../docs/VERIFICATION.md) reports the checks completed on the current revision.
